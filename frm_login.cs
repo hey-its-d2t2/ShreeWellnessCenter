@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShreeWellnessCenter
@@ -25,12 +19,12 @@ namespace ShreeWellnessCenter
 
         private void label3_MouseHover(object sender, EventArgs e)
         {
-            lblSalesmanLogin.ForeColor = Color.FromArgb(45,180,150);
+            lblSalesmanLogin.ForeColor = Color.FromArgb(45, 180, 150);
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            lblSalesmanLogin.ForeColor = Color.FromArgb(51,51,51);
+            lblSalesmanLogin.ForeColor = Color.FromArgb(51, 51, 51);
         }
 
         private void label2_MouseHover(object sender, EventArgs e)
@@ -55,8 +49,8 @@ namespace ShreeWellnessCenter
             loadingBar.Stop();
             this.Hide();
             frmMain.Show();
-        }      
- 
+        }
+
         private void lblSalesmanLogin_Click(object sender, EventArgs e)
         {
             frmSalManLog frmSalManLog = new frmSalManLog();
@@ -66,11 +60,11 @@ namespace ShreeWellnessCenter
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            frmForgotPass   frmForgotPass   = new frmForgotPass();
+            frmForgotPass frmForgotPass = new frmForgotPass();
             this.Hide();
             frmForgotPass.Show();
         }
 
-      
+
     }
 }

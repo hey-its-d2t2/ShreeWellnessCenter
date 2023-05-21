@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Security.Claims;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace ShreeWellnessCenter.usrFrm
@@ -43,33 +42,66 @@ namespace ShreeWellnessCenter.usrFrm
 
                     Int64 qty = Int64.Parse(dropQuty.Value.ToString());
 
-                    double nuSP = 0.0;
-                    double sp = 0.0;
-                    bool isNumber = double.TryParse(txtSP.Text.ToString(), out nuSP);
-                    if (isNumber) { sp = nuSP; }
-                    else { msg("SP का value अमान्य है !..."); ; }
-
-                    double nuDP = 0.0;
-                    double dp = 0.0;
-                    bool isNumber1 = double.TryParse(txtDP.Text.ToString(), out nuDP);
-                    if (isNumber1) { dp = nuDP; }
-                    else { msg("DP का value अमान्य है !..."); }
-
-                    double pr = qty * dp;
-                    lblPrice.Text = string.Format(pr.ToString());
-
-                    if (txtProductName.Text != "" && txtSP.Text !="" && txtDP.Text !="")
+                    if(txtSP.Text !="")
                     {
-                        string query = "INSERT INTO product(product_name, quantity, sp, dp, amount) VALUES ('" + uppercasetxt + "'," + qty + "," + sp + ", " + dp + "," + pr + ")";
-                        DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट जोड़ा गया !...");
-                        datagrid_Items.Refresh();
-                        clearAllFields();
+                        double nuSP = 0.0;
+                        double sp = 0.0;
+                        bool isNumber = double.TryParse(txtSP.Text.ToString(), out nuSP);
+                        if (isNumber) 
+                        {
+                            sp = nuSP;
+                            if (txtDP.Text != "")
+                            {
+                                double nuDP = 0.0;
+                                double dp = 0.0;
+                                bool isNumber1 = double.TryParse(txtDP.Text.ToString(), out nuDP);
+                                if (isNumber1) 
+                                {
+                                    dp = nuDP;
+                                    double pr = qty * dp;
+                                    lblPrice.Text = string.Format(pr.ToString());
+
+                                    if (txtProductName.Text != "" && txtSP.Text != "" && txtDP.Text != "")
+                                    {
+                                        try
+                                        {
+                                            string query = "INSERT INTO product(product_name, quantity, sp, dp, amount) VALUES ('" + uppercasetxt + "'," + qty + "," + sp + ", " + dp + "," + pr + ")";
+                                            DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट जोड़ा गया !...");
+                                            datagrid_Items.Refresh();
+                                            clearAllFields();
+                                        }
+                                        catch
+                                        {
+                                            msg("अमान्य विवरण !...");
+                                            clearAllFields();
+                                            datagrid_Items.Refresh();
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        msg("अमान्य विवरण !...");
+                                        clearAllFields();
+                                        datagrid_Items.Refresh();
+                                    }
+
+                                }
+                                else { msg("DP का value अमान्य है !..."); }
+                            }
+                            else
+                            {
+                                msg("DP का value लिखें !...");
+                                txtDP.Text = "";
+                                txtDP.Select();
+                            }
+                        }
+                        else { msg("SP का value अमान्य है !...");  }
                     }
                     else
                     {
-                        msg("Invalid credentials.");
-                        clearAllFields();
-                        datagrid_Items.Refresh();
+                        msg("SP का value लिखें !...");
+                        txtSP.Text = "";
+                        txtSP.Select();
                     }
 
                 }
@@ -103,9 +135,8 @@ namespace ShreeWellnessCenter.usrFrm
             else { clearAllFields(); datagrid_Items.Refresh(); }
 
         }
-        private void usr_frmItemDetails_Load(object sender, EventArgs e)
+        private void getMyData()
         {
-
             datagrid_Items.Refresh();
             dtadGrid_Items_3.Refresh();
             datdGrid_Items.Refresh();
@@ -120,7 +151,12 @@ namespace ShreeWellnessCenter.usrFrm
             dtadGrid_Items_3.Refresh();
             datdGrid_Items.Refresh();
         }
-       
+        private void usr_frmItemDetails_Load(object sender, EventArgs e)
+        {
+
+            getMyData();
+        }
+
         private void clearAllFields()
         {
             txtProductName.Text = "";
@@ -133,7 +169,9 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void btnCleaar_Click(object sender, EventArgs e)
         {
+
             clearAllFields();
+            datagrid_Items.Refresh();
         }
 
         private void txtProductName_Click(object sender, EventArgs e)
@@ -154,15 +192,16 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void datagrid_Items_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            datagrid_Items.Refresh();
-            string query = "select * from product";
-            DataSet dataSet = DB.GetData(query);
-            if (dataSet.Tables[0].Rows.Count > 0)
+            try
             {
-                datagrid_Items.DataSource = dataSet.Tables[0];
+                getMyData();
+
             }
-            txtProductName.Text = "";
-            datagrid_Items.Refresh();
+            catch
+            {
+                datagrid_Items.Refresh();
+            }
+           
         }
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
@@ -178,63 +217,117 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void txtProductName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
+           if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
-                txtProductName.SelectNextControl(dropQuty, true, false, false, false);
+                if (txtProductName.Text != "")
+                {
+                    dropQuty.Select();
+                }
+                else
+                {
+                    msg("प्रॉडक्ट का नाम लिखें ! ..."); txtSP.Text = "";
+                }
+
             }
+           
+
         }
 
         private void dropQuty_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
-                txtProductName.SelectNextControl(txtSP, true, false, false, false);
+                if (dropQuty.Value >= 0)
+                {
+                    txtSP.Select();
+                }
+                else
+                {
+                    msg("अमान्य Quantity !...");
+                }
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtProductName.Select();
             }
 
         }
 
         private void txtSP_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
-                txtProductName.SelectNextControl(txtDP, true, false, false, false);
+                if (txtSP.Text != "")
+                {
+                    double nuSP = 0.0;
+                    bool isNumber = double.TryParse(txtSP.Text.ToString(), out nuSP);
+                    if (isNumber)
+                    {
+                        txtDP.Select();
+                    }
+                    else { msg("SP का value अमान्य है !..."); txtSP.Text = "";txtSP.Select(); }
+                }
+                else
+                {
+                    msg("SP का value लिखें !...");
+                    txtSP.Text = "";
+                    txtSP.Select();
+                }
             }
-
+            else if (e.KeyCode == Keys.Up)
+            {
+                dropQuty.Select();
+            }
         }
 
         private void txtDP_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
-                Int64 qty = Int64.Parse(dropQuty.Value.ToString());
-                double dp = Int64.Parse(txtDP.Text.ToString());
-                double pr = qty * dp;
-                lblPrice.Text = string.Format(pr.ToString());
+                if (txtDP.Text != "")
+                {
+                    double nuDP = 0.0;
+                    bool isNumber = double.TryParse(txtDP.Text.ToString(), out nuDP);
+                    if (isNumber)
+                    {
+                        txtDP.Select();
+                        Int64 qty = Int64.Parse(dropQuty.Value.ToString());
+                        double dp = Int64.Parse(txtDP.Text.ToString());
+                        double pr = qty * dp;
+                        lblPrice.Text = string.Format(pr.ToString());
+                        btnAdd.Select();
+                    }
+                    else { msg("DP का value अमान्य है !..."); txtDP.Text = "";txtDP.Select(); }
+                }
+                else
+                {
 
+                    msg("DP का value लिखें !...");
+                    txtDP.Text = "";
+                    txtDP.Select();
+
+                }
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtSP.Select();
             }
         }
+    
 
+        private void btnAdd_KeyDown(object sender, KeyEventArgs e)
+        {
+            guna2GradientButton1_Click(sender, e);
 
+        }
 
         //------------------------------------------- Page 2 --------------------------------------------
 
 
-        private void datdGrid_Items_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            datdGrid_Items.Refresh();
-            string query = "select * from product";
-            DataSet dataSet = DB.GetData(query);
-            if (dataSet.Tables[0].Rows.Count > 0)
-            {
-                datdGrid_Items.DataSource = dataSet.Tables[0];
-            }
-
-            datdGrid_Items.Refresh();
-        }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-     
+
             datdGrid_Items.Refresh();
             string input = txtSearch.Text;
             string uppercasetxt = input.ToUpper();
@@ -245,21 +338,18 @@ namespace ShreeWellnessCenter.usrFrm
         }
 
         private void datdGrid_Items_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            datdGrid_Items.Refresh();
-            int slno = int.Parse(datagrid_Items.Rows[e.RowIndex].Cells[0].Value.ToString());
-            string prductName = datagrid_Items.Rows[e.RowIndex].Cells[1].Value.ToString();
-            int quty = int.Parse(datagrid_Items.Rows[e.RowIndex].Cells[2].Value.ToString());
-            double sp = double.Parse(datagrid_Items.Rows[e.RowIndex].Cells[3].Value.ToString());
-            double dp = double.Parse(datagrid_Items.Rows[e.RowIndex].Cells[4].Value.ToString());
-            double amount = double.Parse(datagrid_Items.Rows[e.RowIndex].Cells[5].Value.ToString());
-
-            txtxSLNO.Text = slno.ToString();
-            txtProductNm.Text = prductName;
-            dropQtyVal.Value = quty;
-            txtSPVal.Text = sp.ToString();
-            txtDPVal.Text = dp.ToString();
-            lblAmtVal.Text = amount.ToString();
+        {   try
+            {
+                datdGrid_Items.Refresh();
+                txtxSLNO.Text = datdGrid_Items.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtProductNm.Text = datdGrid_Items.Rows[e.RowIndex].Cells[1].Value.ToString();
+                dropQtyVal.Value = int.Parse(datdGrid_Items.Rows[e.RowIndex].Cells[2].Value.ToString());
+                txtSPVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDPVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[4].Value.ToString();
+                lblAmtVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+            catch { datdGrid_Items.Refresh(); }
+          
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -275,41 +365,84 @@ namespace ShreeWellnessCenter.usrFrm
 
 
                     Int64 qty = Int64.Parse(dropQtyVal.Value.ToString());
-
-                    double nuSP = 0.0;
-                    double sp = 0.0;
-                    bool isNumber = double.TryParse(txtSPVal.Text.ToString(), out nuSP);
-                    if (isNumber) { sp = nuSP; }
-                    else { msg("SP का value अमान्य है !..."); }
-
-                    double nuDP = 0.0;
-                    double dp = 0.0;
-                    bool isNumber1 = double.TryParse(txtDPVal.Text.ToString(), out nuDP);
-                    if (isNumber1) { dp = nuDP; }
-                    else { msg("DP का value अमान्य है !..."); }
-
-                    double pr = qty * dp;
-                    lblAmtVal.Text = string.Format(pr.ToString());
-
-                    if (txtProductNm.Text != "" && txtSPVal.Text != "" && txtDPVal.Text != "")
+                    if (txtSPVal.Text != "")
                     {
-                        string query = "UPDATE product SET product_name ='" + uppercasetxt + "', quantity = " + qty + ", sp = " + sp + ", dp = " + dp + ", amount = " + pr + " WHERE  sl_no = " + slno + "";
+                        double nuSP = 0.0;
+                        double sp = 0.0;
+                        bool isNumber = double.TryParse(txtSPVal.Text.ToString(), out nuSP);
+                        if (isNumber) 
+                        {
+                            sp = nuSP; 
 
-                        DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट अपडेट किया गया !...");
-                        datagrid_Items.Refresh();
-                        ClearP();
+                            if(txtDPVal.Text != "")
+                            {
+                                double nuDP = 0.0;
+                                double dp = 0.0;
+                                bool isNumber1 = double.TryParse(txtDPVal.Text.ToString(), out nuDP);
+                                if (isNumber1) 
+                                {
+                                    dp = nuDP;
+                                    double pr = qty * dp;
+                                    lblAmtVal.Text = string.Format(pr.ToString());
+                                    try
+                                    {
+                                        if (txtProductNm.Text != "" && txtSPVal.Text != "" && txtDPVal.Text != "")
+                                        {
+                                            string query = "UPDATE product SET product_name ='" + uppercasetxt + "', quantity = " + qty + ", sp = " + sp + ", dp = " + dp + ", amount = " + pr + " WHERE  sl_no = " + slno + "";
+
+                                            DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट अपडेट किया गया !...");
+                                            datdGrid_Items.Refresh();
+                                            getMyData();
+                                            ClearP();
+                                        }
+                                        else
+                                        {
+                                            pMsg("अमान्य विवरण !...");
+                                            ClearP();
+                                            datdGrid_Items.Refresh();
+                                        }
+                                    }
+                                    catch
+                                    {
+
+                                        pMsg("अमान्य विवरण !...");
+                                        ClearP();
+                                        datdGrid_Items.Refresh();
+
+                                    }
+
+                                }
+                                else 
+                                {
+                                    msg("DP का value अमान्य है !...");
+                                    txtDPVal.Text = "";
+                                    txtDPVal.Select();
+                                   
+                                }
+
+                            }
+                            else
+                            {
+                                msg("DP का value लिखें !...");
+                            }
+
+                        }
+                        else
+                        {
+                            msg("SP का value अमान्य है !...");
+                            txtSPVal.Text = "";
+                            txtSPVal.Select();
+                        
+                        }
                     }
                     else
                     {
-                        pMsg("Invalid credentials...");
-                        ClearP();
-                        datdGrid_Items.Refresh();
-
+                        msg("SP का value लिखें !...");
                     }
                 }
                 else
                 {
-                    pMsg("कोई बदलाव नहीं किया गया !");
+                    pMsg("प्रॉडक्ट का नाम लिखें !...");
                     ClearP();
                     datdGrid_Items.Refresh();
 
@@ -317,15 +450,17 @@ namespace ShreeWellnessCenter.usrFrm
             }
             catch
             {
-                pMsg("Invalid credentials...");
+                pMsg("अमान्य विवरण !...");
                 ClearP();
                 datdGrid_Items.Refresh();
+                getMyData();
             }
         }
         private void btnClearP_Click(object sender, EventArgs e)
         {
             ClearP();
             datdGrid_Items.Refresh();
+            getMyData();
         }
         private void ClearP()
         {
@@ -340,15 +475,17 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 if (txtProductNm.Text != "")
                 {
                     int slno = int.Parse(txtxSLNO.Text.ToString());
 
                     string query = "DELETE FROM PRODUCT WHERE SL_NO = " + slno + "";
 
-                    DB.SetData(query,txtProductNm.Text+Environment.NewLine +"एक प्रॉडक्ट डिलीट किया गया !...");
-                    datagrid_Items.Refresh();
+                    DB.SetData(query, txtProductNm.Text + Environment.NewLine + "एक प्रॉडक्ट डिलीट किया गया !...");
+                    datdGrid_Items.Refresh();
+                    getMyData();
                     ClearP();
                 }
                 else
@@ -361,12 +498,12 @@ namespace ShreeWellnessCenter.usrFrm
             }
             catch
             {
-                pMsg("Invalid credentials...");
+                pMsg("अमान्य विवरण !...");
                 ClearP();
                 datdGrid_Items.Refresh();
 
             }
-        } 
+        }
 
         private void pMsg(string pmsg)
         {
@@ -376,15 +513,17 @@ namespace ShreeWellnessCenter.usrFrm
             if (result == DialogResult.OK)
             {
                 ClearP();
+                datdGrid_Items.Refresh();
             }
             else
             {
 
                 ClearP();
+                datdGrid_Items.Refresh();
             }
 
         }
-//------------------------------------------------------- Page 3 -----------------------------------------------------
+        //------------------------------------------------------- Page 3 -----------------------------------------------------
         private void lblPIM_Click(object sender, EventArgs e)
         {
 
@@ -414,19 +553,179 @@ namespace ShreeWellnessCenter.usrFrm
         //------------------------------- 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            dtadGrid_Items_3.Refresh();
+            dtadGrid_Items_3.Refresh(); getMyData();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            datdGrid_Items.Refresh();
+            datdGrid_Items.Refresh();            getMyData();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            datagrid_Items.Refresh();
+            datagrid_Items.Refresh();           getMyData(); ;
         }
 
-     
+        private void tabPage2_Leave(object sender, EventArgs e)
+        {
+            datdGrid_Items.Refresh(); getMyData();
+        }
+
+        private void guna2TabControl1_Click(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh();
+            getMyData();
+        }
+
+        private void guna2TabControl1_Leave(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh();
+            getMyData();
+        }
+
+        private void tabPage3_Leave(object sender, EventArgs e)
+        {
+            dtadGrid_Items_3.Refresh();
+            getMyData();
+        }
+
+        private void txtProductNm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
+                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            {
+                if (txtProductNm.Text != "")
+                {
+                    dropQtyVal.Select();
+                }
+                else
+                {
+                    pMsg("प्रॉडक्ट का नाम लिखें !...");
+                }
+            }
+        }
+
+        private void dropQtyVal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9 
+                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            {
+                if (dropQtyVal.Value >= 0)
+                {
+                    txtSPVal.Select();
+                }
+                else
+                {
+                    pMsg("अमान्य Quantity !...");
+                }
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtProductNm.SelectAll();
+            }
+        }
+
+        private void txtSPVal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
+                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            {
+                if (txtSPVal.Text != "")
+                {
+                    double nuSP = 0.0;
+                    bool isNumber = double.TryParse(txtSPVal.Text.ToString(), out nuSP);
+                    if (isNumber)
+                    {
+                        txtDPVal.Select();
+                    }
+                    else
+                    {
+
+                        msg("SP का value अमान्य है !...");
+                        txtSPVal.Text = "";
+                        txtSPVal.Select();
+                    }
+                }
+                else
+                {
+                    msg("SP का value लिखें !...");
+                }
+            }
+            else if(e.KeyCode == Keys.Up)
+            {
+                dropQtyVal.Select();
+            }
+
+        }
+
+        private void txtDPVal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
+                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            {
+                if (txtDPVal.Text != "")
+                {
+                    double nuDP = 0.0;
+                    bool isNumber = double.TryParse(txtDPVal.Text.ToString(), out nuDP);
+                    if (isNumber)
+                    {
+                        Int64 qty = Int64.Parse(dropQtyVal.Value.ToString());
+                        double dp = Int64.Parse(txtDPVal.Text.ToString());
+                        double pr = qty * dp;
+                        lblAmtVal.Text = string.Format(pr.ToString());
+                        btnUpdate.Select();
+                    }
+                    else
+                    {
+                        msg("DP का value अमान्य है !...");
+                        txtDPVal.Text = "";
+                        txtDPVal.Select();
+                    }
+                }
+                else
+                {
+                    msg("DP का value लिखें !...");
+                }
+            }
+            else if(e.KeyCode == Keys.Up)
+            {
+                txtSPVal.SelectAll();
+            }
+
+        }
+
+        private void btnUpdate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
+            {
+                btnUpdate_Click(sender, e);
+
+            }
+        }
+
+        private void datdGrid_Items_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            datagrid_Items.Refresh(); getMyData();
+        }
+
+        private void btnRefUPrd_Click(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh(); getMyData();
+        }
+
+        private void btnRefUPrd_MouseHover(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh(); getMyData();
+        }
+
+        private void btnRefPP_Click(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh(); getMyData();
+        }
+
+        private void btnRefPP_MouseHover(object sender, EventArgs e)
+        {
+            datagrid_Items.Refresh(); getMyData();
+        }
     }
 }

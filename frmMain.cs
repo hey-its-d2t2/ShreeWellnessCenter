@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShreeWellnessCenter
@@ -16,10 +10,10 @@ namespace ShreeWellnessCenter
         {
             InitializeComponent();
         }
-         public frmMain(string user)
+        public frmMain(string user)
         {
             InitializeComponent();
-            if(user == null )
+            if (user == null)
             {
                 this.Show();
             }
@@ -28,7 +22,7 @@ namespace ShreeWellnessCenter
                 btnHome.Visible = true;
                 btnInvoice.Visible = true;
                 btnCustomer.Visible = false;
-                btnItems.Visible = false;   
+                btnItems.Visible = false;
                 btnUser.Visible = false;
             }
 
@@ -41,7 +35,7 @@ namespace ShreeWellnessCenter
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Maximized)
+            if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
                 if (pnlBtnHolder.Width == 233)
@@ -50,7 +44,7 @@ namespace ShreeWellnessCenter
                     guna2Transition1.ShowSync(pnlBtnHolder);
                 }
             }
-            else if(WindowState == FormWindowState.Normal)
+            else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
                 if (pnlBtnHolder.Width == 233)
@@ -112,17 +106,17 @@ namespace ShreeWellnessCenter
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            if(pnlBtnHolder.Width == 233)
+            if (pnlBtnHolder.Width == 233)
             {
                 pnlBtnHolder.Width = 77;
                 guna2Transition1.ShowSync(pnlBtnHolder);
             }
-            else if( pnlBtnHolder.Width == 77)
+            else if (pnlBtnHolder.Width == 77)
             {
                 pnlBtnHolder.Width = 233;
                 guna2Transition1.ShowSync(pnlBtnHolder);
             }
-            else 
+            else
             {
                 pnlBtnHolder.Width = 233;
                 guna2Transition1.ShowSync(pnlBtnHolder);
@@ -142,7 +136,7 @@ namespace ShreeWellnessCenter
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            frm_login frm_Login =   new frm_login();
+            frm_login frm_Login = new frm_login();
             this.Close();
             frm_Login.Show();
         }
@@ -157,15 +151,15 @@ namespace ShreeWellnessCenter
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            pnlBtnSide.Top= btnCustomer.Top;
+            pnlBtnSide.Top = btnCustomer.Top;
             pnlBtnSide.FillColor = Color.Red;
             usr_frmCustomer1.BringToFront();
-           
+
         }
 
         private void btnItems_Click(object sender, EventArgs e)
         {
-            pnlBtnSide.Top  =   btnItems.Top;
+            pnlBtnSide.Top = btnItems.Top;
             pnlBtnSide.FillColor = Color.Red;
             usr_frmItemDetails1.BringToFront();
         }
@@ -195,11 +189,11 @@ namespace ShreeWellnessCenter
             pnlBtnSide.Top = btnItems.Top;
         }
 
-       
+
         private void btnUser_MouseHover(object sender, EventArgs e)
         {
             pnlBtnSide.FillColor = Color.FromArgb(45, 180, 150);
-            pnlBtnSide.Top= btnUser.Top;
+            pnlBtnSide.Top = btnUser.Top;
         }
 
         private void btnHome_MouseLeave(object sender, EventArgs e)

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ShreeWellnessCenter
 {
@@ -23,7 +17,7 @@ namespace ShreeWellnessCenter
         public DataSet GetData(string query)
         {
             OracleConnection conn = GetConnection();
-           OracleCommand cmd = new OracleCommand
+            OracleCommand cmd = new OracleCommand
             {
                 Connection = conn,
                 CommandText = query
@@ -43,8 +37,10 @@ namespace ShreeWellnessCenter
             conn.Open();
             cmd.CommandText = query;
             cmd.ExecuteNonQuery();
+              
             conn.Close();
             MessageBox.Show(msg, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
         }
         public void SetData(string query)
         {
@@ -59,7 +55,7 @@ namespace ShreeWellnessCenter
             conn.Close();
         }
 
-      
+
     }
-    
+
 }
