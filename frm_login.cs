@@ -39,6 +39,20 @@ namespace ShreeWellnessCenter
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //lblInvalidUsrName.Visible = false;
+            //lblInvalidUsrPassword.Visible = false;
+
+            //if (txtUsrName.Text !="")
+            //{
+            //    lblInvalidUsrName.Visible = false;
+
+            //}
+            //else
+            //{
+            //    lblInvalidUsrName.Visible = true;
+            //    lblInvalidUsrName.Location = new Point(140, 125);
+            //    lblInvalidUsrName.Text = "उपयोगकर्ता का नाम लिखें !";
+            //}
             loadingBar.Visible = true;
             loadingBar.Start();
             for (int i = 0; i < 10; i++)
@@ -65,6 +79,18 @@ namespace ShreeWellnessCenter
             frmForgotPass.Show();
         }
 
+       
 
+        private void txtUsrName_Click(object sender, EventArgs e)
+        {
+            lblInvalidUsrName.Visible = false;
+            lblInvalidUsrPassword.Visible = false;
+        }
+
+        private void txtUsrPass_Click(object sender, EventArgs e)
+        {
+            lblInvalidUsrName.Visible = false;
+            lblInvalidUsrPassword.Visible = false;
+        }
     }
 }

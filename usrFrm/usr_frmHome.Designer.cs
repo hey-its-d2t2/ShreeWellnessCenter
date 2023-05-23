@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usr_frmHome));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,21 +44,8 @@
             this.txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.datagrid_Items = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.sLNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aMOUNTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ShreeWellnessCenter.DataSet1();
-            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUCTTableAdapter = new ShreeWellnessCenter.DataSet1TableAdapters.PRODUCTTableAdapter();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Items)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAppName
@@ -255,7 +241,6 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.datagrid_Items.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagrid_Items.AutoGenerateColumns = false;
             this.datagrid_Items.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.datagrid_Items.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.datagrid_Items.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -271,14 +256,6 @@
             this.datagrid_Items.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid_Items.ColumnHeadersHeight = 45;
             this.datagrid_Items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.datagrid_Items.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sLNODataGridViewTextBoxColumn,
-            this.pRODUCTNAMEDataGridViewTextBoxColumn,
-            this.qUANTITYDataGridViewTextBoxColumn,
-            this.sPDataGridViewTextBoxColumn,
-            this.dPDataGridViewTextBoxColumn,
-            this.aMOUNTDataGridViewTextBoxColumn});
-            this.datagrid_Items.DataSource = this.pRODUCTBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,79 +299,6 @@
             this.datagrid_Items.Visible = false;
             this.datagrid_Items.Click += new System.EventHandler(this.datagrid_Items_Click);
             // 
-            // sLNODataGridViewTextBoxColumn
-            // 
-            this.sLNODataGridViewTextBoxColumn.DataPropertyName = "SL_NO";
-            this.sLNODataGridViewTextBoxColumn.FillWeight = 55.82888F;
-            this.sLNODataGridViewTextBoxColumn.HeaderText = "SL_NO";
-            this.sLNODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLNODataGridViewTextBoxColumn.Name = "sLNODataGridViewTextBoxColumn";
-            this.sLNODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRODUCTNAMEDataGridViewTextBoxColumn
-            // 
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.FillWeight = 320.8556F;
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.HeaderText = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.Name = "pRODUCTNAMEDataGridViewTextBoxColumn";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // qUANTITYDataGridViewTextBoxColumn
-            // 
-            this.qUANTITYDataGridViewTextBoxColumn.DataPropertyName = "QUANTITY";
-            this.qUANTITYDataGridViewTextBoxColumn.FillWeight = 55.82888F;
-            this.qUANTITYDataGridViewTextBoxColumn.HeaderText = "QUANTITY";
-            this.qUANTITYDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.qUANTITYDataGridViewTextBoxColumn.Name = "qUANTITYDataGridViewTextBoxColumn";
-            this.qUANTITYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sPDataGridViewTextBoxColumn
-            // 
-            this.sPDataGridViewTextBoxColumn.DataPropertyName = "SP";
-            this.sPDataGridViewTextBoxColumn.FillWeight = 55.82888F;
-            this.sPDataGridViewTextBoxColumn.HeaderText = "SP";
-            this.sPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sPDataGridViewTextBoxColumn.Name = "sPDataGridViewTextBoxColumn";
-            this.sPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dPDataGridViewTextBoxColumn
-            // 
-            this.dPDataGridViewTextBoxColumn.DataPropertyName = "DP";
-            this.dPDataGridViewTextBoxColumn.FillWeight = 55.82888F;
-            this.dPDataGridViewTextBoxColumn.HeaderText = "DP";
-            this.dPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dPDataGridViewTextBoxColumn.Name = "dPDataGridViewTextBoxColumn";
-            this.dPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aMOUNTDataGridViewTextBoxColumn
-            // 
-            this.aMOUNTDataGridViewTextBoxColumn.DataPropertyName = "AMOUNT";
-            this.aMOUNTDataGridViewTextBoxColumn.FillWeight = 55.82888F;
-            this.aMOUNTDataGridViewTextBoxColumn.HeaderText = "AMOUNT";
-            this.aMOUNTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aMOUNTDataGridViewTextBoxColumn.Name = "aMOUNTDataGridViewTextBoxColumn";
-            this.aMOUNTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRODUCTBindingSource
-            // 
-            this.pRODUCTBindingSource.DataMember = "PRODUCT";
-            this.pRODUCTBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSet1BindingSource
-            // 
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
-            this.dataSet1BindingSource.Position = 0;
-            // 
-            // pRODUCTTableAdapter
-            // 
-            this.pRODUCTTableAdapter.ClearBeforeFill = true;
-            // 
             // usr_frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -415,9 +319,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Items)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,9 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aMOUNTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource pRODUCTBindingSource;
-        private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource dataSet1BindingSource;
-        private DataSet1TableAdapters.PRODUCTTableAdapter pRODUCTTableAdapter;
+        //private DataSet1TableAdapters.PRODUCTTableAdapter pRODUCTTableAdapter;
     }
 }

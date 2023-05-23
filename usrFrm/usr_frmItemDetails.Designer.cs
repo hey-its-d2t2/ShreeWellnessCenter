@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,8 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblAllProduct = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,6 +66,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblAllProduct = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.label15 = new System.Windows.Forms.Label();
@@ -110,14 +109,6 @@
             this.lblPIM = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.dtadGrid_Items_3 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ShreeWellnessCenter.DataSet1();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRefPP = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
@@ -139,8 +130,6 @@
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtadGrid_Items_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PRODUCTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.guna2Panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,30 +186,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Product";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // lblAllProduct
-            // 
-            this.lblAllProduct.AutoSize = true;
-            this.lblAllProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllProduct.Font = new System.Drawing.Font("DokChampa", 16F, System.Drawing.FontStyle.Bold);
-            this.lblAllProduct.ForeColor = System.Drawing.Color.Red;
-            this.lblAllProduct.Location = new System.Drawing.Point(1019, 120);
-            this.lblAllProduct.Name = "lblAllProduct";
-            this.lblAllProduct.Size = new System.Drawing.Size(39, 53);
-            this.lblAllProduct.TabIndex = 459;
-            this.lblAllProduct.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(856, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 58);
-            this.label1.TabIndex = 440;
-            this.label1.Text = "Total Products\r\n( सभी प्रॉडक्ट )\r\n";
             // 
             // guna2Separator3
             // 
@@ -693,6 +658,30 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(1386, 363);
             this.guna2Panel4.TabIndex = 3091;
+            // 
+            // lblAllProduct
+            // 
+            this.lblAllProduct.AutoSize = true;
+            this.lblAllProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lblAllProduct.Font = new System.Drawing.Font("DokChampa", 16F, System.Drawing.FontStyle.Bold);
+            this.lblAllProduct.ForeColor = System.Drawing.Color.Red;
+            this.lblAllProduct.Location = new System.Drawing.Point(1019, 120);
+            this.lblAllProduct.Name = "lblAllProduct";
+            this.lblAllProduct.Size = new System.Drawing.Size(39, 53);
+            this.lblAllProduct.TabIndex = 459;
+            this.lblAllProduct.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.label1.Location = new System.Drawing.Point(856, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 58);
+            this.label1.TabIndex = 440;
+            this.label1.Text = "Total Products\r\n( सभी प्रॉडक्ट )\r\n";
             // 
             // tabPage2
             // 
@@ -1448,7 +1437,6 @@
             this.dtadGrid_Items_3.AllowUserToDeleteRows = false;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.dtadGrid_Items_3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dtadGrid_Items_3.AutoGenerateColumns = false;
             this.dtadGrid_Items_3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dtadGrid_Items_3.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtadGrid_Items_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1464,14 +1452,6 @@
             this.dtadGrid_Items_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtadGrid_Items_3.ColumnHeadersHeight = 45;
             this.dtadGrid_Items_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtadGrid_Items_3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dtadGrid_Items_3.DataSource = this.PRODUCTBindingSource;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle18.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1513,70 +1493,6 @@
             this.dtadGrid_Items_3.ThemeStyle.RowsStyle.Height = 24;
             this.dtadGrid_Items_3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.dtadGrid_Items_3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SL_NO";
-            this.dataGridViewTextBoxColumn1.FillWeight = 64.17112F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "SL_NO";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PRODUCT_NAME";
-            this.dataGridViewTextBoxColumn2.FillWeight = 305.0169F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "PRODUCT_NAME";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 100;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "QUANTITY";
-            this.dataGridViewTextBoxColumn3.FillWeight = 57.70299F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "QUANTITY";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SP";
-            this.dataGridViewTextBoxColumn4.FillWeight = 57.70299F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "SP";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "DP";
-            this.dataGridViewTextBoxColumn5.FillWeight = 57.70299F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "DP";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "AMOUNT";
-            this.dataGridViewTextBoxColumn6.FillWeight = 57.70299F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "AMOUNT";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // PRODUCTBindingSource
-            // 
-            this.PRODUCTBindingSource.DataMember = "PRODUCT";
-            this.PRODUCTBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2Panel8
             // 
@@ -1678,8 +1594,6 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtadGrid_Items_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PRODUCTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             this.ResumeLayout(false);
@@ -1740,8 +1654,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.BindingSource PRODUCTBindingSource;
-        private DataSet1 dataSet1;
+        //private DataSet1 dataSet1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         protected internal Guna.UI2.WinForms.Guna2DataGridView dtadGrid_Items_3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;

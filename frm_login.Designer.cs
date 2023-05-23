@@ -99,6 +99,7 @@
             this.txtUsrName.SelectedText = "";
             this.txtUsrName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUsrName.WordWrap = false;
+            this.txtUsrName.Click += new System.EventHandler(this.txtUsrName_Click);
             // 
             // btnLogin
             // 
@@ -233,6 +234,7 @@
             this.txtUsrPass.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUsrPass.UseSystemPasswordChar = true;
             this.txtUsrPass.WordWrap = false;
+            this.txtUsrPass.Click += new System.EventHandler(this.txtUsrPass_Click);
             // 
             // lblInvalidUsrPassword
             // 

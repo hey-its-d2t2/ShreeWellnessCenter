@@ -796,5 +796,15 @@ namespace ShreeWellnessCenter.usrFrm
         {
             getMyData();
         }
+
+        private void dataSet2BindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cUSTOMERBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
