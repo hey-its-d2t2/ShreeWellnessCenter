@@ -28,28 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usr_frmItemDetails));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label16 = new System.Windows.Forms.Label();
             this.datagrid_Items = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.sLNODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTITYDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aMOUNTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODUCTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ShreeWellnessCenter.DataSet1();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblErrPN = new System.Windows.Forms.Label();
@@ -73,9 +71,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtxSLNO = new System.Windows.Forms.Label();
+            this.txtProductNm = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtxSLNO = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -89,15 +88,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtSPVal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtProductNm = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.datdGrid_Items = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datdGrid_Items1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRefUPrd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -114,9 +106,31 @@
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pRODUCTTableAdapter = new ShreeWellnessCenter.DataSet1TableAdapters.PRODUCTTableAdapter();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODUCTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTYDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTYDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dPDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Items)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropQuty)).BeginInit();
             this.guna2Panel4.SuspendLayout();
@@ -124,7 +138,7 @@
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropQtyVal)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datdGrid_Items)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datdGrid_Items1)).BeginInit();
             this.guna2Panel5.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -191,7 +205,7 @@
             // 
             this.guna2Separator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator3.Location = new System.Drawing.Point(26, 356);
+            this.guna2Separator3.Location = new System.Drawing.Point(26, 353);
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(1327, 10);
             this.guna2Separator3.TabIndex = 430;
@@ -223,42 +237,45 @@
             // 
             this.datagrid_Items.AllowUserToAddRows = false;
             this.datagrid_Items.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.datagrid_Items.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.datagrid_Items.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagrid_Items.AutoGenerateColumns = false;
             this.datagrid_Items.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.datagrid_Items.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.datagrid_Items.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.datagrid_Items.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.NullValue = "NA";
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagrid_Items.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = "NA";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Items.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid_Items.ColumnHeadersHeight = 45;
             this.datagrid_Items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.datagrid_Items.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sLNODataGridViewTextBoxColumn1,
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1,
-            this.qUANTITYDataGridViewTextBoxColumn1,
-            this.sPDataGridViewTextBoxColumn1,
-            this.dPDataGridViewTextBoxColumn1,
-            this.aMOUNTDataGridViewTextBoxColumn1});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagrid_Items.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Column2,
+            this.pRODUCTNAMEDataGridViewTextBoxColumn,
+            this.qTYDataGridViewTextBoxColumn,
+            this.sPDataGridViewTextBoxColumn,
+            this.dPDataGridViewTextBoxColumn,
+            this.tOTALDataGridViewTextBoxColumn});
+            this.datagrid_Items.DataSource = this.pRODUCTBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Items.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagrid_Items.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagrid_Items.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.datagrid_Items.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
             this.datagrid_Items.Location = new System.Drawing.Point(3, 366);
+            this.datagrid_Items.MultiSelect = false;
             this.datagrid_Items.Name = "datagrid_Items";
             this.datagrid_Items.ReadOnly = true;
             this.datagrid_Items.RowHeadersVisible = false;
@@ -288,61 +305,21 @@
             this.datagrid_Items.ThemeStyle.RowsStyle.Height = 24;
             this.datagrid_Items.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.datagrid_Items.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datagrid_Items.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_Items_CellClick);
             // 
-            // sLNODataGridViewTextBoxColumn1
+            // pRODUCTBindingSource
             // 
-            this.sLNODataGridViewTextBoxColumn1.DataPropertyName = "SL_NO";
-            this.sLNODataGridViewTextBoxColumn1.FillWeight = 48.12835F;
-            this.sLNODataGridViewTextBoxColumn1.HeaderText = "SL_NO";
-            this.sLNODataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sLNODataGridViewTextBoxColumn1.Name = "sLNODataGridViewTextBoxColumn1";
-            this.sLNODataGridViewTextBoxColumn1.ReadOnly = true;
+            this.pRODUCTBindingSource.DataMember = "PRODUCT";
+            this.pRODUCTBindingSource.DataSource = this.dataSet1BindingSource;
             // 
-            // pRODUCTNAMEDataGridViewTextBoxColumn1
+            // dataSet1BindingSource
             // 
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.DataPropertyName = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.FillWeight = 276.9481F;
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.HeaderText = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.Name = "pRODUCTNAMEDataGridViewTextBoxColumn1";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
             // 
-            // qUANTITYDataGridViewTextBoxColumn1
+            // dataSet1
             // 
-            this.qUANTITYDataGridViewTextBoxColumn1.DataPropertyName = "QUANTITY";
-            this.qUANTITYDataGridViewTextBoxColumn1.FillWeight = 68.73089F;
-            this.qUANTITYDataGridViewTextBoxColumn1.HeaderText = "QUANTITY";
-            this.qUANTITYDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.qUANTITYDataGridViewTextBoxColumn1.Name = "qUANTITYDataGridViewTextBoxColumn1";
-            this.qUANTITYDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // sPDataGridViewTextBoxColumn1
-            // 
-            this.sPDataGridViewTextBoxColumn1.DataPropertyName = "SP";
-            this.sPDataGridViewTextBoxColumn1.FillWeight = 68.73089F;
-            this.sPDataGridViewTextBoxColumn1.HeaderText = "SP";
-            this.sPDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sPDataGridViewTextBoxColumn1.Name = "sPDataGridViewTextBoxColumn1";
-            this.sPDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dPDataGridViewTextBoxColumn1
-            // 
-            this.dPDataGridViewTextBoxColumn1.DataPropertyName = "DP";
-            this.dPDataGridViewTextBoxColumn1.FillWeight = 68.73089F;
-            this.dPDataGridViewTextBoxColumn1.HeaderText = "DP";
-            this.dPDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dPDataGridViewTextBoxColumn1.Name = "dPDataGridViewTextBoxColumn1";
-            this.dPDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // aMOUNTDataGridViewTextBoxColumn1
-            // 
-            this.aMOUNTDataGridViewTextBoxColumn1.DataPropertyName = "AMOUNT";
-            this.aMOUNTDataGridViewTextBoxColumn1.FillWeight = 68.73089F;
-            this.aMOUNTDataGridViewTextBoxColumn1.HeaderText = "AMOUNT";
-            this.aMOUNTDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.aMOUNTDataGridViewTextBoxColumn1.Name = "aMOUNTDataGridViewTextBoxColumn1";
-            this.aMOUNTDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label23
             // 
@@ -402,7 +379,7 @@
             this.btnClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnClear.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnClear.FocusedColor = System.Drawing.Color.White;
-            this.btnClear.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -430,6 +407,11 @@
             this.dropQuty.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropQuty.Location = new System.Drawing.Point(101, 94);
             this.dropQuty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dropQuty.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.dropQuty.Name = "dropQuty";
             this.dropQuty.Size = new System.Drawing.Size(145, 43);
             this.dropQuty.TabIndex = 2;
@@ -448,7 +430,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnAdd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnAdd.FocusedColor = System.Drawing.Color.White;
-            this.btnAdd.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -583,7 +565,7 @@
             this.txtSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtSP.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtSP.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtSP.Location = new System.Drawing.Point(313, 93);
+            this.txtSP.Location = new System.Drawing.Point(321, 93);
             this.txtSP.Margin = new System.Windows.Forms.Padding(0);
             this.txtSP.MaxLength = 7;
             this.txtSP.Name = "txtSP";
@@ -663,11 +645,11 @@
             // 
             this.lblAllProduct.AutoSize = true;
             this.lblAllProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllProduct.Font = new System.Drawing.Font("DokChampa", 16F, System.Drawing.FontStyle.Bold);
+            this.lblAllProduct.Font = new System.Drawing.Font("DokChampa", 18F, System.Drawing.FontStyle.Bold);
             this.lblAllProduct.ForeColor = System.Drawing.Color.Red;
-            this.lblAllProduct.Location = new System.Drawing.Point(1019, 120);
+            this.lblAllProduct.Location = new System.Drawing.Point(1055, 99);
             this.lblAllProduct.Name = "lblAllProduct";
-            this.lblAllProduct.Size = new System.Drawing.Size(39, 53);
+            this.lblAllProduct.Size = new System.Drawing.Size(43, 58);
             this.lblAllProduct.TabIndex = 459;
             this.lblAllProduct.Text = "0";
             // 
@@ -679,9 +661,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.label1.Location = new System.Drawing.Point(856, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 58);
+            this.label1.Size = new System.Drawing.Size(167, 87);
             this.label1.TabIndex = 440;
-            this.label1.Text = "Total Products\r\n( सभी प्रॉडक्ट )\r\n";
+            this.label1.Text = "Total Products        :\r\n( सभी प्रॉडक्ट ) \r\n\r\n";
             // 
             // tabPage2
             // 
@@ -740,9 +722,10 @@
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.txtxSLNO);
+            this.guna2Panel1.Controls.Add(this.txtProductNm);
             this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.txtxSLNO);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
             this.guna2Panel1.Controls.Add(this.txtSearch);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
@@ -756,11 +739,59 @@
             this.guna2Panel1.Controls.Add(this.label8);
             this.guna2Panel1.Controls.Add(this.txtSPVal);
             this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.txtProductNm);
             this.guna2Panel1.Location = new System.Drawing.Point(17, 27);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(458, 695);
             this.guna2Panel1.TabIndex = 322;
+            // 
+            // txtxSLNO
+            // 
+            this.txtxSLNO.AutoSize = true;
+            this.txtxSLNO.BackColor = System.Drawing.Color.Transparent;
+            this.txtxSLNO.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtxSLNO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.txtxSLNO.Location = new System.Drawing.Point(97, 99);
+            this.txtxSLNO.Name = "txtxSLNO";
+            this.txtxSLNO.Size = new System.Drawing.Size(29, 39);
+            this.txtxSLNO.TabIndex = 299;
+            this.txtxSLNO.Text = "0";
+            // 
+            // txtProductNm
+            // 
+            this.txtProductNm.Animated = true;
+            this.txtProductNm.AutoRoundedCorners = true;
+            this.txtProductNm.AutoSize = true;
+            this.txtProductNm.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.txtProductNm.BackColor = System.Drawing.Color.Transparent;
+            this.txtProductNm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.txtProductNm.BorderRadius = 22;
+            this.txtProductNm.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtProductNm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtProductNm.DefaultText = "";
+            this.txtProductNm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.txtProductNm.DisabledState.FillColor = System.Drawing.Color.GhostWhite;
+            this.txtProductNm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.txtProductNm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductNm.FillColor = System.Drawing.Color.GhostWhite;
+            this.txtProductNm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductNm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.txtProductNm.Location = new System.Drawing.Point(97, 181);
+            this.txtProductNm.Margin = new System.Windows.Forms.Padding(0);
+            this.txtProductNm.MaxLength = 5;
+            this.txtProductNm.Name = "txtProductNm";
+            this.txtProductNm.PasswordChar = '\0';
+            this.txtProductNm.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtProductNm.PlaceholderText = "प्रॉडक्ट का नाम";
+            this.txtProductNm.SelectedText = "";
+            this.txtProductNm.Size = new System.Drawing.Size(340, 47);
+            this.txtProductNm.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtProductNm.TabIndex = 298;
+            this.txtProductNm.WordWrap = false;
             // 
             // btnDelete
             // 
@@ -773,7 +804,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnDelete.FillColor2 = System.Drawing.Color.Red;
             this.btnDelete.FocusedColor = System.Drawing.Color.White;
-            this.btnDelete.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -794,53 +825,15 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(3, 139);
+            this.label4.Location = new System.Drawing.Point(3, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 35);
             this.label4.TabIndex = 291;
             this.label4.Text = "SL. NO. :";
             // 
-            // txtxSLNO
-            // 
-            this.txtxSLNO.Animated = true;
-            this.txtxSLNO.AutoRoundedCorners = true;
-            this.txtxSLNO.AutoSize = true;
-            this.txtxSLNO.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.txtxSLNO.BackColor = System.Drawing.Color.Transparent;
-            this.txtxSLNO.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.txtxSLNO.BorderRadius = 23;
-            this.txtxSLNO.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtxSLNO.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtxSLNO.DefaultText = "";
-            this.txtxSLNO.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.txtxSLNO.DisabledState.FillColor = System.Drawing.Color.GhostWhite;
-            this.txtxSLNO.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.txtxSLNO.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtxSLNO.Enabled = false;
-            this.txtxSLNO.FillColor = System.Drawing.Color.GhostWhite;
-            this.txtxSLNO.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtxSLNO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtxSLNO.Location = new System.Drawing.Point(99, 126);
-            this.txtxSLNO.Margin = new System.Windows.Forms.Padding(0);
-            this.txtxSLNO.MaxLength = 5;
-            this.txtxSLNO.Name = "txtxSLNO";
-            this.txtxSLNO.PasswordChar = '\0';
-            this.txtxSLNO.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtxSLNO.PlaceholderText = "";
-            this.txtxSLNO.SelectedText = "";
-            this.txtxSLNO.Size = new System.Drawing.Size(141, 48);
-            this.txtxSLNO.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtxSLNO.TabIndex = 290;
-            this.txtxSLNO.WordWrap = false;
-            // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(86, 97);
+            this.guna2Separator1.Location = new System.Drawing.Point(97, 143);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(274, 10);
             this.guna2Separator1.TabIndex = 34;
@@ -895,7 +888,7 @@
             this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnUpdate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnUpdate.FocusedColor = System.Drawing.Color.White;
-            this.btnUpdate.Font = new System.Drawing.Font("DokChampa", 12F);
+            this.btnUpdate.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -923,7 +916,7 @@
             this.btnClearP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnClearP.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnClearP.FocusedColor = System.Drawing.Color.White;
-            this.btnClearP.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearP.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearP.ForeColor = System.Drawing.Color.White;
             this.btnClearP.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnClearP.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -949,10 +942,15 @@
             this.dropQtyVal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(95)))));
             this.dropQtyVal.FocusedState.UpDownButtonForeColor = System.Drawing.Color.Red;
             this.dropQtyVal.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dropQtyVal.Location = new System.Drawing.Point(88, 258);
+            this.dropQtyVal.Location = new System.Drawing.Point(97, 251);
             this.dropQtyVal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dropQtyVal.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.dropQtyVal.Name = "dropQtyVal";
-            this.dropQtyVal.Size = new System.Drawing.Size(145, 43);
+            this.dropQtyVal.Size = new System.Drawing.Size(176, 43);
             this.dropQtyVal.TabIndex = 3;
             this.dropQtyVal.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.dropQtyVal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dropQtyVal_KeyDown);
@@ -985,7 +983,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label6.Location = new System.Drawing.Point(3, 203);
+            this.label6.Location = new System.Drawing.Point(12, 193);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 35);
             this.label6.TabIndex = 260;
@@ -996,7 +994,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label7.Location = new System.Drawing.Point(27, 268);
+            this.label7.Location = new System.Drawing.Point(32, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 35);
             this.label7.TabIndex = 150;
@@ -1026,7 +1024,7 @@
             this.txtDPVal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtDPVal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtDPVal.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtDPVal.Location = new System.Drawing.Point(88, 389);
+            this.txtDPVal.Location = new System.Drawing.Point(97, 381);
             this.txtDPVal.Margin = new System.Windows.Forms.Padding(0);
             this.txtDPVal.MaxLength = 7;
             this.txtDPVal.Name = "txtDPVal";
@@ -1034,7 +1032,7 @@
             this.txtDPVal.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtDPVal.PlaceholderText = "";
             this.txtDPVal.SelectedText = "";
-            this.txtDPVal.Size = new System.Drawing.Size(145, 48);
+            this.txtDPVal.Size = new System.Drawing.Size(176, 48);
             this.txtDPVal.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtDPVal.TabIndex = 5;
             this.txtDPVal.WordWrap = false;
@@ -1045,7 +1043,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label8.Location = new System.Drawing.Point(22, 399);
+            this.label8.Location = new System.Drawing.Point(35, 391);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 35);
             this.label8.TabIndex = 130;
@@ -1075,7 +1073,7 @@
             this.txtSPVal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtSPVal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtSPVal.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtSPVal.Location = new System.Drawing.Point(88, 321);
+            this.txtSPVal.Location = new System.Drawing.Point(97, 313);
             this.txtSPVal.Margin = new System.Windows.Forms.Padding(0);
             this.txtSPVal.MaxLength = 7;
             this.txtSPVal.Name = "txtSPVal";
@@ -1083,7 +1081,7 @@
             this.txtSPVal.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSPVal.PlaceholderText = "";
             this.txtSPVal.SelectedText = "";
-            this.txtSPVal.Size = new System.Drawing.Size(145, 48);
+            this.txtSPVal.Size = new System.Drawing.Size(176, 48);
             this.txtSPVal.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSPVal.TabIndex = 4;
             this.txtSPVal.WordWrap = false;
@@ -1094,54 +1092,16 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.label9.Location = new System.Drawing.Point(36, 329);
+            this.label9.Location = new System.Drawing.Point(36, 321);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 35);
             this.label9.TabIndex = 110;
             this.label9.Text = "*SP :";
             // 
-            // txtProductNm
-            // 
-            this.txtProductNm.Animated = true;
-            this.txtProductNm.AutoRoundedCorners = true;
-            this.txtProductNm.AutoSize = true;
-            this.txtProductNm.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.txtProductNm.BackColor = System.Drawing.Color.Transparent;
-            this.txtProductNm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.txtProductNm.BorderRadius = 23;
-            this.txtProductNm.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtProductNm.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtProductNm.DefaultText = "";
-            this.txtProductNm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtProductNm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtProductNm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProductNm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProductNm.FillColor = System.Drawing.Color.GhostWhite;
-            this.txtProductNm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductNm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProductNm.Location = new System.Drawing.Point(88, 190);
-            this.txtProductNm.Margin = new System.Windows.Forms.Padding(0);
-            this.txtProductNm.MaxLength = 30;
-            this.txtProductNm.Name = "txtProductNm";
-            this.txtProductNm.PasswordChar = '\0';
-            this.txtProductNm.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtProductNm.PlaceholderText = "प्रॉडक्ट का नाम";
-            this.txtProductNm.SelectedText = "";
-            this.txtProductNm.Size = new System.Drawing.Size(340, 48);
-            this.txtProductNm.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtProductNm.TabIndex = 2;
-            this.txtProductNm.WordWrap = false;
-            this.txtProductNm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductNm_KeyDown);
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.datdGrid_Items);
+            this.panel1.Controls.Add(this.datdGrid_Items1);
             this.panel1.Controls.Add(this.guna2Panel5);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1150,131 +1110,79 @@
             this.panel1.Size = new System.Drawing.Size(1386, 746);
             this.panel1.TabIndex = 481;
             // 
-            // datdGrid_Items
+            // datdGrid_Items1
             // 
-            this.datdGrid_Items.AllowUserToAddRows = false;
-            this.datdGrid_Items.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.datdGrid_Items.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.datdGrid_Items.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.datdGrid_Items.BackgroundColor = System.Drawing.Color.GhostWhite;
-            this.datdGrid_Items.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.datdGrid_Items.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.NullValue = "NA";
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datdGrid_Items.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.datdGrid_Items.ColumnHeadersHeight = 45;
-            this.datdGrid_Items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.datdGrid_Items.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datdGrid_Items.DefaultCellStyle = dataGridViewCellStyle15;
-            this.datdGrid_Items.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datdGrid_Items.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.datdGrid_Items.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.datdGrid_Items.Location = new System.Drawing.Point(494, 60);
-            this.datdGrid_Items.Name = "datdGrid_Items";
-            this.datdGrid_Items.ReadOnly = true;
-            this.datdGrid_Items.RowHeadersVisible = false;
-            this.datdGrid_Items.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.datdGrid_Items.RowTemplate.Height = 24;
-            this.datdGrid_Items.Size = new System.Drawing.Size(892, 686);
-            this.datdGrid_Items.TabIndex = 420;
-            this.datdGrid_Items.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
-            this.datdGrid_Items.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.datdGrid_Items.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.datdGrid_Items.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.datdGrid_Items.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.datdGrid_Items.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.datdGrid_Items.ThemeStyle.BackColor = System.Drawing.Color.GhostWhite;
-            this.datdGrid_Items.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.datdGrid_Items.ThemeStyle.HeaderStyle.Height = 45;
-            this.datdGrid_Items.ThemeStyle.ReadOnly = true;
-            this.datdGrid_Items.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            this.datdGrid_Items.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.datdGrid_Items.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datdGrid_Items.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.datdGrid_Items.ThemeStyle.RowsStyle.Height = 24;
-            this.datdGrid_Items.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            this.datdGrid_Items.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datdGrid_Items.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datdGrid_Items_CellClick_1);
-            this.datdGrid_Items.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.datdGrid_Items_ColumnHeaderMouseClick);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SL_NO";
-            this.dataGridViewTextBoxColumn7.FillWeight = 48.12835F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "SL_NO";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "PRODUCT_NAME";
-            this.dataGridViewTextBoxColumn8.FillWeight = 276.9481F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "PRODUCT_NAME";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "QUANTITY";
-            this.dataGridViewTextBoxColumn9.FillWeight = 68.73089F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "QUANTITY";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "SP";
-            this.dataGridViewTextBoxColumn10.FillWeight = 68.73089F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "SP";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DP";
-            this.dataGridViewTextBoxColumn11.FillWeight = 68.73089F;
-            this.dataGridViewTextBoxColumn11.HeaderText = "DP";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "AMOUNT";
-            this.dataGridViewTextBoxColumn12.FillWeight = 68.73089F;
-            this.dataGridViewTextBoxColumn12.HeaderText = "AMOUNT";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.datdGrid_Items1.AllowUserToAddRows = false;
+            this.datdGrid_Items1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.datdGrid_Items1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.datdGrid_Items1.AutoGenerateColumns = false;
+            this.datdGrid_Items1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.datdGrid_Items1.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.datdGrid_Items1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.datdGrid_Items1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.NullValue = "NA";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datdGrid_Items1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.datdGrid_Items1.ColumnHeadersHeight = 45;
+            this.datdGrid_Items1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.datdGrid_Items1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1,
+            this.qTYDataGridViewTextBoxColumn1,
+            this.sPDataGridViewTextBoxColumn1,
+            this.dPDataGridViewTextBoxColumn1,
+            this.tOTALDataGridViewTextBoxColumn1});
+            this.datdGrid_Items1.DataSource = this.pRODUCTBindingSource;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datdGrid_Items1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.datdGrid_Items1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datdGrid_Items1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.datdGrid_Items1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.datdGrid_Items1.Location = new System.Drawing.Point(494, 60);
+            this.datdGrid_Items1.Name = "datdGrid_Items1";
+            this.datdGrid_Items1.ReadOnly = true;
+            this.datdGrid_Items1.RowHeadersVisible = false;
+            this.datdGrid_Items1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.datdGrid_Items1.RowTemplate.Height = 24;
+            this.datdGrid_Items1.Size = new System.Drawing.Size(892, 686);
+            this.datdGrid_Items1.TabIndex = 420;
+            this.datdGrid_Items1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
+            this.datdGrid_Items1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.datdGrid_Items1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.datdGrid_Items1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.datdGrid_Items1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.datdGrid_Items1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.datdGrid_Items1.ThemeStyle.BackColor = System.Drawing.Color.GhostWhite;
+            this.datdGrid_Items1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.datdGrid_Items1.ThemeStyle.HeaderStyle.Height = 45;
+            this.datdGrid_Items1.ThemeStyle.ReadOnly = true;
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.Height = 24;
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            this.datdGrid_Items1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datdGrid_Items1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datdGrid_Items_CellClick_1);
+            this.datdGrid_Items1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.datdGrid_Items_ColumnHeaderMouseClick);
             // 
             // guna2Panel5
             // 
@@ -1287,7 +1195,7 @@
             // 
             // btnRefUPrd
             // 
-            this.btnRefUPrd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefUPrd.BackgroundImage")));
+            this.btnRefUPrd.BackgroundImage = global::ShreeWellnessCenter.Properties.Resources.ref__1__wh;
             this.btnRefUPrd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefUPrd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRefUPrd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1301,8 +1209,8 @@
             this.btnRefUPrd.ForeColor = System.Drawing.Color.White;
             this.btnRefUPrd.HoverState.FillColor = System.Drawing.Color.White;
             this.btnRefUPrd.HoverState.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.btnRefUPrd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnRefUPrd.Image = ((System.Drawing.Image)(resources.GetObject("btnRefUPrd.Image")));
+            this.btnRefUPrd.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.ref_wh;
+            this.btnRefUPrd.Image = global::ShreeWellnessCenter.Properties.Resources.ref__1__wh;
             this.btnRefUPrd.ImageSize = new System.Drawing.Size(40, 40);
             this.btnRefUPrd.Location = new System.Drawing.Point(20, 8);
             this.btnRefUPrd.Name = "btnRefUPrd";
@@ -1388,7 +1296,7 @@
             this.btnPrintAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.btnPrintAll.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnPrintAll.FocusedColor = System.Drawing.Color.White;
-            this.btnPrintAll.Font = new System.Drawing.Font("DokChampa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintAll.Font = new System.Drawing.Font("DokChampa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintAll.ForeColor = System.Drawing.Color.White;
             this.btnPrintAll.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPrintAll.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -1396,10 +1304,10 @@
             this.btnPrintAll.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(95)))));
             this.btnPrintAll.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPrintAll.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnPrintAll.Location = new System.Drawing.Point(21, 18);
+            this.btnPrintAll.Location = new System.Drawing.Point(45, 21);
             this.btnPrintAll.Name = "btnPrintAll";
             this.btnPrintAll.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrintAll.Size = new System.Drawing.Size(253, 67);
+            this.btnPrintAll.Size = new System.Drawing.Size(212, 67);
             this.btnPrintAll.TabIndex = 2;
             this.btnPrintAll.Text = "सभी प्रिंट करें ";
             // 
@@ -1435,31 +1343,40 @@
             // 
             this.dtadGrid_Items_3.AllowUserToAddRows = false;
             this.dtadGrid_Items_3.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.dtadGrid_Items_3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.dtadGrid_Items_3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtadGrid_Items_3.AutoGenerateColumns = false;
             this.dtadGrid_Items_3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dtadGrid_Items_3.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtadGrid_Items_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dtadGrid_Items_3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.NullValue = "NA";
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtadGrid_Items_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.NullValue = "NA";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtadGrid_Items_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dtadGrid_Items_3.ColumnHeadersHeight = 45;
             this.dtadGrid_Items_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtadGrid_Items_3.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dtadGrid_Items_3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2,
+            this.qTYDataGridViewTextBoxColumn2,
+            this.sPDataGridViewTextBoxColumn2,
+            this.dPDataGridViewTextBoxColumn2,
+            this.tOTALDataGridViewTextBoxColumn2});
+            this.dtadGrid_Items_3.DataSource = this.pRODUCTBindingSource;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("DokChampa", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtadGrid_Items_3.DefaultCellStyle = dataGridViewCellStyle9;
             this.dtadGrid_Items_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtadGrid_Items_3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtadGrid_Items_3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
@@ -1507,7 +1424,7 @@
             // 
             // btnRefPP
             // 
-            this.btnRefPP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefPP.BackgroundImage")));
+            this.btnRefPP.BackgroundImage = global::ShreeWellnessCenter.Properties.Resources.ref__1__wh;
             this.btnRefPP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefPP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRefPP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1521,8 +1438,8 @@
             this.btnRefPP.ForeColor = System.Drawing.Color.White;
             this.btnRefPP.HoverState.FillColor = System.Drawing.Color.White;
             this.btnRefPP.HoverState.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.btnRefPP.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnRefPP.Image = ((System.Drawing.Image)(resources.GetObject("btnRefPP.Image")));
+            this.btnRefPP.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.ref_wh;
+            this.btnRefPP.Image = global::ShreeWellnessCenter.Properties.Resources.ref__1_;
             this.btnRefPP.ImageSize = new System.Drawing.Size(40, 40);
             this.btnRefPP.Location = new System.Drawing.Point(23, 9);
             this.btnRefPP.Name = "btnRefPP";
@@ -1563,6 +1480,169 @@
             this.guna2Panel7.Size = new System.Drawing.Size(331, 752);
             this.guna2Panel7.TabIndex = 0;
             // 
+            // pRODUCTTableAdapter
+            // 
+            this.pRODUCTTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 70.30866F;
+            this.Column2.HeaderText = "SL_NO";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // pRODUCTNAMEDataGridViewTextBoxColumn
+            // 
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.FillWeight = 301.9648F;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.HeaderText = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.Name = "pRODUCTNAMEDataGridViewTextBoxColumn";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qTYDataGridViewTextBoxColumn
+            // 
+            this.qTYDataGridViewTextBoxColumn.DataPropertyName = "QTY";
+            this.qTYDataGridViewTextBoxColumn.FillWeight = 83.19732F;
+            this.qTYDataGridViewTextBoxColumn.HeaderText = "QTY";
+            this.qTYDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.qTYDataGridViewTextBoxColumn.Name = "qTYDataGridViewTextBoxColumn";
+            this.qTYDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sPDataGridViewTextBoxColumn
+            // 
+            this.sPDataGridViewTextBoxColumn.DataPropertyName = "SP";
+            this.sPDataGridViewTextBoxColumn.FillWeight = 67.21263F;
+            this.sPDataGridViewTextBoxColumn.HeaderText = "SP";
+            this.sPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sPDataGridViewTextBoxColumn.Name = "sPDataGridViewTextBoxColumn";
+            this.sPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dPDataGridViewTextBoxColumn
+            // 
+            this.dPDataGridViewTextBoxColumn.DataPropertyName = "DP";
+            this.dPDataGridViewTextBoxColumn.FillWeight = 67.35123F;
+            this.dPDataGridViewTextBoxColumn.HeaderText = "DP";
+            this.dPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dPDataGridViewTextBoxColumn.Name = "dPDataGridViewTextBoxColumn";
+            this.dPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tOTALDataGridViewTextBoxColumn
+            // 
+            this.tOTALDataGridViewTextBoxColumn.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.FillWeight = 67.35123F;
+            this.tOTALDataGridViewTextBoxColumn.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tOTALDataGridViewTextBoxColumn.Name = "tOTALDataGridViewTextBoxColumn";
+            this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 62.27575F;
+            this.Column3.HeaderText = "SL_NO";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // pRODUCTNAMEDataGridViewTextBoxColumn1
+            // 
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.DataPropertyName = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.FillWeight = 240.0892F;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.HeaderText = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.Name = "pRODUCTNAMEDataGridViewTextBoxColumn1";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // qTYDataGridViewTextBoxColumn1
+            // 
+            this.qTYDataGridViewTextBoxColumn1.DataPropertyName = "QTY";
+            this.qTYDataGridViewTextBoxColumn1.FillWeight = 129.9885F;
+            this.qTYDataGridViewTextBoxColumn1.HeaderText = "QTY";
+            this.qTYDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.qTYDataGridViewTextBoxColumn1.Name = "qTYDataGridViewTextBoxColumn1";
+            this.qTYDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // sPDataGridViewTextBoxColumn1
+            // 
+            this.sPDataGridViewTextBoxColumn1.DataPropertyName = "SP";
+            this.sPDataGridViewTextBoxColumn1.FillWeight = 44.72553F;
+            this.sPDataGridViewTextBoxColumn1.HeaderText = "SP";
+            this.sPDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sPDataGridViewTextBoxColumn1.Name = "sPDataGridViewTextBoxColumn1";
+            this.sPDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dPDataGridViewTextBoxColumn1
+            // 
+            this.dPDataGridViewTextBoxColumn1.DataPropertyName = "DP";
+            this.dPDataGridViewTextBoxColumn1.FillWeight = 39.90841F;
+            this.dPDataGridViewTextBoxColumn1.HeaderText = "DP";
+            this.dPDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dPDataGridViewTextBoxColumn1.Name = "dPDataGridViewTextBoxColumn1";
+            this.dPDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tOTALDataGridViewTextBoxColumn1
+            // 
+            this.tOTALDataGridViewTextBoxColumn1.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn1.FillWeight = 129.9885F;
+            this.tOTALDataGridViewTextBoxColumn1.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tOTALDataGridViewTextBoxColumn1.Name = "tOTALDataGridViewTextBoxColumn1";
+            this.tOTALDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 71.085F;
+            this.Column4.HeaderText = "SL_NO";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // pRODUCTNAMEDataGridViewTextBoxColumn2
+            // 
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.DataPropertyName = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.FillWeight = 282.6905F;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.HeaderText = "PRODUCT_NAME";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.Name = "pRODUCTNAMEDataGridViewTextBoxColumn2";
+            this.pRODUCTNAMEDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // qTYDataGridViewTextBoxColumn2
+            // 
+            this.qTYDataGridViewTextBoxColumn2.DataPropertyName = "QTY";
+            this.qTYDataGridViewTextBoxColumn2.FillWeight = 88.82032F;
+            this.qTYDataGridViewTextBoxColumn2.HeaderText = "QTY";
+            this.qTYDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.qTYDataGridViewTextBoxColumn2.Name = "qTYDataGridViewTextBoxColumn2";
+            this.qTYDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // sPDataGridViewTextBoxColumn2
+            // 
+            this.sPDataGridViewTextBoxColumn2.DataPropertyName = "SP";
+            this.sPDataGridViewTextBoxColumn2.FillWeight = 69.35845F;
+            this.sPDataGridViewTextBoxColumn2.HeaderText = "SP";
+            this.sPDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.sPDataGridViewTextBoxColumn2.Name = "sPDataGridViewTextBoxColumn2";
+            this.sPDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dPDataGridViewTextBoxColumn2
+            // 
+            this.dPDataGridViewTextBoxColumn2.DataPropertyName = "DP";
+            this.dPDataGridViewTextBoxColumn2.FillWeight = 67.45728F;
+            this.dPDataGridViewTextBoxColumn2.HeaderText = "DP";
+            this.dPDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dPDataGridViewTextBoxColumn2.Name = "dPDataGridViewTextBoxColumn2";
+            this.dPDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tOTALDataGridViewTextBoxColumn2
+            // 
+            this.tOTALDataGridViewTextBoxColumn2.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn2.FillWeight = 85.23323F;
+            this.tOTALDataGridViewTextBoxColumn2.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.tOTALDataGridViewTextBoxColumn2.Name = "tOTALDataGridViewTextBoxColumn2";
+            this.tOTALDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // usr_frmItemDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1576,6 +1656,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Items)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropQuty)).EndInit();
@@ -1587,7 +1670,7 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropQtyVal)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datdGrid_Items)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datdGrid_Items1)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -1637,7 +1720,6 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox txtSPVal;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2TextBox txtProductNm;
         private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
@@ -1661,12 +1743,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator5;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sLNODataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTNAMEDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTITYDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sPDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dPDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aMOUNTDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1674,16 +1750,33 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox txtxSLNO;
         private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
-        protected internal Guna.UI2.WinForms.Guna2DataGridView datdGrid_Items;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        protected internal Guna.UI2.WinForms.Guna2DataGridView datdGrid_Items1;
         private Guna.UI2.WinForms.Guna2GradientButton btnRefUPrd;
         private Guna.UI2.WinForms.Guna2GradientButton btnRefPP;
+        private System.Windows.Forms.BindingSource pRODUCTBindingSource;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private DataSet1 dataSet1;
+        private DataSet1TableAdapters.PRODUCTTableAdapter pRODUCTTableAdapter;
+        private Guna.UI2.WinForms.Guna2TextBox txtProductNm;
+        private System.Windows.Forms.Label txtxSLNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTNAMEDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTYDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTNAMEDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTYDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dPDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn2;
     }
 }

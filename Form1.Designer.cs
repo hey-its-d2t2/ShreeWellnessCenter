@@ -46,7 +46,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Image = global::ShreeWellnessCenter.Properties.Resources.shree_Logo;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-64, -63);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -110,7 +110,6 @@
             this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(60, 75);
             this.guna2WinProgressIndicator1.TabIndex = 2;
             this.guna2WinProgressIndicator1.UseTransparentBackground = true;
-            this.guna2WinProgressIndicator1.Click += new System.EventHandler(this.guna2WinProgressIndicator1_Click);
             // 
             // splash
             // 

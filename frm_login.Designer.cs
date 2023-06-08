@@ -51,6 +51,8 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -64,8 +66,9 @@
             // 
             // guna2PictureBox1
             // 
-            resources.ApplyResources(this.guna2PictureBox1, "guna2PictureBox1");
+            this.guna2PictureBox1.Image = global::ShreeWellnessCenter.Properties.Resources.bckgShree;
             this.guna2PictureBox1.ImageRotate = 0F;
+            resources.ApplyResources(this.guna2PictureBox1, "guna2PictureBox1");
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -90,7 +93,7 @@
             this.txtUsrName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrName.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrName.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtUsrName.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsrName.IconLeft")));
+            this.txtUsrName.IconLeft = global::ShreeWellnessCenter.Properties.Resources.usr;
             this.txtUsrName.MaxLength = 16;
             this.txtUsrName.Name = "txtUsrName";
             this.txtUsrName.PasswordChar = '\0';
@@ -100,6 +103,7 @@
             this.txtUsrName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUsrName.WordWrap = false;
             this.txtUsrName.Click += new System.EventHandler(this.txtUsrName_Click);
+            this.txtUsrName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsrName_KeyDown);
             // 
             // btnLogin
             // 
@@ -146,8 +150,9 @@
             // 
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.BorderRadius = 10;
-            resources.ApplyResources(this.imgLogo, "imgLogo");
+            this.imgLogo.Image = global::ShreeWellnessCenter.Properties.Resources.shreelogo_half;
             this.imgLogo.ImageRotate = 0F;
+            resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.TabStop = false;
             this.imgLogo.UseTransparentBackground = true;
@@ -165,7 +170,7 @@
             resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Image = global::ShreeWellnessCenter.Properties.Resources.close;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseTransparentBackground = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -224,7 +229,7 @@
             this.txtUsrPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrPass.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrPass.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtUsrPass.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsrPass.IconLeft")));
+            this.txtUsrPass.IconLeft = global::ShreeWellnessCenter.Properties.Resources.key;
             this.txtUsrPass.MaxLength = 16;
             this.txtUsrPass.Name = "txtUsrPass";
             this.txtUsrPass.PasswordChar = '●';
@@ -235,6 +240,7 @@
             this.txtUsrPass.UseSystemPasswordChar = true;
             this.txtUsrPass.WordWrap = false;
             this.txtUsrPass.Click += new System.EventHandler(this.txtUsrPass_Click);
+            this.txtUsrPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsrPass_KeyDown);
             // 
             // lblInvalidUsrPassword
             // 
@@ -308,17 +314,54 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.guna2Panel2.Name = "guna2Panel2";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.circularProgressBar1, "circularProgressBar1");
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Maximum = 100000;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
+            this.circularProgressBar1.ProgressWidth = 4;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Tahoma", 36F);
+            this.circularProgressBar1.StartAngle = 250;
+            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 2;
+            // 
             // frm_login
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
+            this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2PictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_login";
+            this.Load += new System.EventHandler(this.frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -352,5 +395,7 @@
         private System.Windows.Forms.Label lblInvalidUsrName;
         private Guna.UI2.WinForms.Guna2TextBox txtUsrPass;
         private Guna.UI2.WinForms.Guna2WinProgressIndicator loadingBar;
+        private System.Windows.Forms.Timer timer1;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
     }
 }

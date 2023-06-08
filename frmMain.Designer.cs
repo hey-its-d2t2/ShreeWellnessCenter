@@ -52,12 +52,12 @@
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlBottam = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlUsrCtrlHolder = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.usr_frmHome1 = new ShreeWellnessCenter.usrFrm.usr_frmHome();
             this.usr_frmItemDetails1 = new ShreeWellnessCenter.usrFrm.usr_frmItemDetails();
             this.usr_frmInvoice1 = new ShreeWellnessCenter.usrFrm.usr_frmInvoice();
             this.usr_frmCustomer1 = new ShreeWellnessCenter.usrFrm.usr_frmCustomer();
             this.usr_frmControlAdm1 = new ShreeWellnessCenter.usrFrm.usr_frmControlAdm();
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlBtnHolder.SuspendLayout();
@@ -100,7 +100,7 @@
             this.btnMin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnMin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMin.ForeColor = System.Drawing.Color.White;
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.Image = global::ShreeWellnessCenter.Properties.Resources.minimize;
             this.btnMin.Location = new System.Drawing.Point(1260, 0);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(80, 54);
@@ -123,7 +123,7 @@
             this.btnMax.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnMax.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMax.ForeColor = System.Drawing.Color.White;
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
+            this.btnMax.Image = global::ShreeWellnessCenter.Properties.Resources.restore;
             this.btnMax.Location = new System.Drawing.Point(1340, 0);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(80, 54);
@@ -149,7 +149,7 @@
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.BorderRadius = 10;
             this.guna2Transition1.SetDecoration(this.imgLogo, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
+            this.imgLogo.Image = global::ShreeWellnessCenter.Properties.Resources.shreelogo_half;
             this.imgLogo.ImageRotate = 0F;
             this.imgLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgLogo.Location = new System.Drawing.Point(9, 2);
@@ -175,7 +175,7 @@
             this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Image = global::ShreeWellnessCenter.Properties.Resources.close;
             this.btnExit.Location = new System.Drawing.Point(1420, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(80, 54);
@@ -207,16 +207,16 @@
             this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
             this.btnLogOut.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2Transition1.SetDecoration(this.btnLogOut, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnLogOut.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLogOut.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.loff_wh;
             this.btnLogOut.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.Image = global::ShreeWellnessCenter.Properties.Resources.loff_ge;
             this.btnLogOut.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnLogOut.ImageRotate = 0F;
             this.btnLogOut.ImageSize = new System.Drawing.Size(34, 34);
             this.btnLogOut.IndicateFocus = true;
             this.btnLogOut.Location = new System.Drawing.Point(20, 755);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnLogOut.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnLogOut.PressedState.ImageSize = new System.Drawing.Size(34, 34);
             this.btnLogOut.Size = new System.Drawing.Size(46, 46);
             this.btnLogOut.TabIndex = 8;
@@ -240,8 +240,8 @@
             this.btnHome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnHome.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnHome.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
-            this.btnHome.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.hm_gr;
+            this.btnHome.Image = global::ShreeWellnessCenter.Properties.Resources.hm_wh;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageSize = new System.Drawing.Size(28, 28);
             this.btnHome.Location = new System.Drawing.Point(20, 105);
@@ -271,8 +271,8 @@
             this.btnUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnUser.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
-            this.btnUser.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.adm_gr__1_;
+            this.btnUser.Image = global::ShreeWellnessCenter.Properties.Resources.adm_wh;
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.ImageSize = new System.Drawing.Size(28, 28);
             this.btnUser.Location = new System.Drawing.Point(20, 526);
@@ -302,8 +302,8 @@
             this.btnItems.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnItems.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnItems.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
-            this.btnItems.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnItems.Image = ((System.Drawing.Image)(resources.GetObject("btnItems.Image")));
+            this.btnItems.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.itm_gr;
+            this.btnItems.Image = global::ShreeWellnessCenter.Properties.Resources.itm_wh__1_;
             this.btnItems.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnItems.ImageSize = new System.Drawing.Size(28, 28);
             this.btnItems.Location = new System.Drawing.Point(20, 331);
@@ -333,8 +333,8 @@
             this.btnCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCustomer.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
-            this.btnCustomer.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
+            this.btnCustomer.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.cus_gr;
+            this.btnCustomer.Image = global::ShreeWellnessCenter.Properties.Resources.cus_wh;
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageSize = new System.Drawing.Size(28, 28);
             this.btnCustomer.Location = new System.Drawing.Point(20, 256);
@@ -362,16 +362,16 @@
             this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2Transition1.SetDecoration(this.guna2ImageButton1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ImageButton1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.guna2ImageButton1.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.menu2__1_;
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.Image = global::ShreeWellnessCenter.Properties.Resources.menu_col;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(34, 34);
             this.guna2ImageButton1.IndicateFocus = true;
             this.guna2ImageButton1.Location = new System.Drawing.Point(20, 6);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(34, 34);
             this.guna2ImageButton1.Size = new System.Drawing.Size(46, 46);
             this.guna2ImageButton1.TabIndex = 1;
@@ -395,8 +395,8 @@
             this.btnInvoice.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInvoice.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnInvoice.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
-            this.btnInvoice.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            this.btnInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoice.Image")));
+            this.btnInvoice.HoverState.Image = global::ShreeWellnessCenter.Properties.Resources.inv_gr;
+            this.btnInvoice.Image = global::ShreeWellnessCenter.Properties.Resources.inv_wh;
             this.btnInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInvoice.ImageSize = new System.Drawing.Size(28, 28);
             this.btnInvoice.Location = new System.Drawing.Point(20, 178);
@@ -453,34 +453,11 @@
             this.pnlUsrCtrlHolder.Size = new System.Drawing.Size(1190, 840);
             this.pnlUsrCtrlHolder.TabIndex = 15;
             // 
-            // guna2Transition1
-            // 
-            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
-            this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
-            this.guna2Transition1.MaxAnimationTime = 2000;
-            this.guna2Transition1.TimeStep = 0.04F;
-            // 
             // usr_frmHome1
             // 
             this.usr_frmHome1.AutoScroll = true;
             this.usr_frmHome1.BackColor = System.Drawing.Color.GhostWhite;
-            this.usr_frmHome1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("usr_frmHome1.BackgroundImage")));
+            this.usr_frmHome1.BackgroundImage = global::ShreeWellnessCenter.Properties.Resources.bckgShree;
             this.usr_frmHome1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Transition1.SetDecoration(this.usr_frmHome1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.usr_frmHome1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -529,6 +506,29 @@
             this.usr_frmControlAdm1.TabIndex = 0;
             this.usr_frmControlAdm1.Load += new System.EventHandler(this.usr_frmControlAdm1_Load);
             // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
+            this.guna2Transition1.MaxAnimationTime = 2000;
+            this.guna2Transition1.TimeStep = 0.04F;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -543,7 +543,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMain";
+            this.Text = "Shree Wellness Center";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlHeader.ResumeLayout(false);

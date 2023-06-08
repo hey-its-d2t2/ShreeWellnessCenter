@@ -43,6 +43,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.loadingBar = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.lblInvalidUsrPassword = new System.Windows.Forms.Label();
@@ -51,6 +52,8 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -87,7 +90,7 @@
             this.txtUsrPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrPass.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrPass.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtUsrPass.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsrPass.IconLeft")));
+            this.txtUsrPass.IconLeft = global::ShreeWellnessCenter.Properties.Resources.key;
             this.txtUsrPass.Location = new System.Drawing.Point(35, 251);
             this.txtUsrPass.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsrPass.MaxLength = 16;
@@ -101,6 +104,8 @@
             this.txtUsrPass.TabIndex = 2;
             this.txtUsrPass.UseSystemPasswordChar = true;
             this.txtUsrPass.WordWrap = false;
+            this.txtUsrPass.Click += new System.EventHandler(this.txtUsrPass_Click);
+            this.txtUsrPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsrPass_KeyDown);
             // 
             // lblInvalidUsrName
             // 
@@ -116,7 +121,6 @@
             this.lblInvalidUsrName.TabIndex = 14;
             this.lblInvalidUsrName.Text = "अमान्य उपयोगकर्ता";
             this.lblInvalidUsrName.Visible = false;
-            this.lblInvalidUsrName.Click += new System.EventHandler(this.lblInvalidUsrName_Click);
             // 
             // lblMessage
             // 
@@ -130,7 +134,6 @@
             this.lblMessage.Size = new System.Drawing.Size(181, 39);
             this.lblMessage.TabIndex = 11;
             this.lblMessage.Text = "विक्रेता लॉगिन";
-            this.lblMessage.Click += new System.EventHandler(this.lblMessage_Click);
             // 
             // guna2Panel2
             // 
@@ -169,7 +172,7 @@
             // 
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.BorderRadius = 10;
-            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
+            this.imgLogo.Image = global::ShreeWellnessCenter.Properties.Resources.shreelogo_half;
             this.imgLogo.ImageRotate = 0F;
             this.imgLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgLogo.Location = new System.Drawing.Point(9, 2);
@@ -212,7 +215,7 @@
             this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Image = global::ShreeWellnessCenter.Properties.Resources.close;
             this.btnExit.Location = new System.Drawing.Point(967, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(80, 54);
@@ -223,6 +226,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.guna2ShadowPanel1.Controls.Add(this.loadingBar);
             this.guna2ShadowPanel1.Controls.Add(this.guna2PictureBox2);
             this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.txtUsrPass);
@@ -240,13 +244,30 @@
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(450, 477);
             this.guna2ShadowPanel1.TabIndex = 11;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
+            // 
+            // loadingBar
+            // 
+            this.loadingBar.AnimationSpeed = 65;
+            this.loadingBar.AutoStart = true;
+            this.loadingBar.BackColor = System.Drawing.Color.Transparent;
+            this.loadingBar.CircleSize = 1F;
+            this.loadingBar.Location = new System.Drawing.Point(182, 225);
+            this.loadingBar.Name = "loadingBar";
+            this.loadingBar.NumberOfCircles = 7;
+            this.loadingBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
+            this.loadingBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.loadingBar.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(95)))));
+            this.loadingBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.loadingBar.Size = new System.Drawing.Size(60, 75);
+            this.loadingBar.TabIndex = 189;
+            this.loadingBar.UseTransparentBackground = true;
+            this.loadingBar.Visible = false;
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.BorderRadius = 10;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.Image = global::ShreeWellnessCenter.Properties.Resources.sale2;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2PictureBox2.Location = new System.Drawing.Point(152, 3);
@@ -256,7 +277,6 @@
             this.guna2PictureBox2.TabIndex = 17;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
-            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // btnBack
             // 
@@ -271,7 +291,7 @@
             this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Image = global::ShreeWellnessCenter.Properties.Resources.back;
             this.btnBack.Location = new System.Drawing.Point(-10, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(72, 49);
@@ -348,7 +368,7 @@
             this.txtUsrName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrName.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtUsrName.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtUsrName.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsrName.IconLeft")));
+            this.txtUsrName.IconLeft = global::ShreeWellnessCenter.Properties.Resources.usr;
             this.txtUsrName.Location = new System.Drawing.Point(35, 177);
             this.txtUsrName.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsrName.MaxLength = 16;
@@ -361,11 +381,12 @@
             this.txtUsrName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUsrName.TabIndex = 1;
             this.txtUsrName.WordWrap = false;
-            this.txtUsrName.TextChanged += new System.EventHandler(this.txtUsrName_TextChanged);
+            this.txtUsrName.Click += new System.EventHandler(this.txtUsrName_Click);
+            this.txtUsrName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsrName_KeyDown);
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Image = global::ShreeWellnessCenter.Properties.Resources.bckgShree;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-13, -7);
@@ -384,12 +405,52 @@
             // 
             this.guna2Elipse3.BorderRadius = 16;
             // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Tahoma", 72F, System.Drawing.FontStyle.Bold);
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(236, 504);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Maximum = 110;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(180)))), ((int)(((byte)(150)))));
+            this.circularProgressBar1.ProgressWidth = 4;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Tahoma", 36F);
+            this.circularProgressBar1.Size = new System.Drawing.Size(63, 55);
+            this.circularProgressBar1.StartAngle = 250;
+            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TabIndex = 139;
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 2;
+            this.circularProgressBar1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmSalManLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1047, 591);
+            this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2Panel1);
@@ -398,6 +459,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSalManLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Shree Wellness Center - Login - Sales Man ";
+            this.Load += new System.EventHandler(this.frmSalManLog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -432,5 +495,8 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private Guna.UI2.WinForms.Guna2WinProgressIndicator loadingBar;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace ShreeWellnessCenter.usrFrm
 {
@@ -14,21 +16,51 @@ namespace ShreeWellnessCenter.usrFrm
         {
             InitializeComponent();
 
+            getMyData();
+        }
+
+        private void getMyData()
+        {
             datagrid_Items.Refresh();
             dtadGrid_Items_3.Refresh();
-            datdGrid_Items.Refresh();
+            datdGrid_Items1.Refresh();
             string query = "select * from product";
             DataSet dataSet = DB.GetData(query);
             if (dataSet.Tables[0].Rows.Count > 0)
             {
-                dtadGrid_Items_3.DataSource = datdGrid_Items.DataSource = datagrid_Items.DataSource = dataSet.Tables[0];
-
+                dtadGrid_Items_3.DataSource = datdGrid_Items1.DataSource = datagrid_Items.DataSource = dataSet.Tables[0];
+            
             }
             datagrid_Items.Refresh();
             dtadGrid_Items_3.Refresh();
-            datdGrid_Items.Refresh();
+            datdGrid_Items1.Refresh();
+            if (datagrid_Items.Rows.Count > 1)
+            {
+                for (int i = 0; i < datagrid_Items.Rows.Count; i++)
+                {
+                    datagrid_Items.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+            if (datdGrid_Items1.Rows.Count > 1)
+            {
+                for (int i = 0; i < datdGrid_Items1.Rows.Count; i++)
+                {
+                    datdGrid_Items1.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+            if (dtadGrid_Items_3.Rows.Count > 1)
+            {
+                for (int i = 0; i < dtadGrid_Items_3.Rows.Count; i++)
+                {
+                    dtadGrid_Items_3.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+            //------
+            int ProdCount = datagrid_Items.Rows.Count;
+            lblAllProduct.Text = ProdCount.ToString();
+            //---
+           
         }
-
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
@@ -65,9 +97,10 @@ namespace ShreeWellnessCenter.usrFrm
                                     {
                                         try
                                         {
-                                            string query = "INSERT INTO product(product_name, quantity, sp, dp, amount) VALUES ('" + uppercasetxt + "'," + qty + "," + sp + ", " + dp + "," + pr + ")";
+                                            string query = "INSERT INTO PRODUCT(product_name, qty, sp, dp, total) VALUES ('" + uppercasetxt + "'," + qty + "," + sp + ", " + dp + "," + pr + ")";
                                             DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट जोड़ा गया !...");
                                             datagrid_Items.Refresh();
+                                            getMyData();
                                             clearAllFields();
                                         }
                                         catch
@@ -135,22 +168,7 @@ namespace ShreeWellnessCenter.usrFrm
             else { clearAllFields(); datagrid_Items.Refresh(); }
 
         }
-        private void getMyData()
-        {
-            datagrid_Items.Refresh();
-            dtadGrid_Items_3.Refresh();
-            datdGrid_Items.Refresh();
-            string query = "select * from product";
-            DataSet dataSet = DB.GetData(query);
-            if (dataSet.Tables[0].Rows.Count > 0)
-            {
-                dtadGrid_Items_3.DataSource = datdGrid_Items.DataSource = datagrid_Items.DataSource = dataSet.Tables[0];
-
-            }
-            datagrid_Items.Refresh();
-            dtadGrid_Items_3.Refresh();
-            datdGrid_Items.Refresh();
-        }
+      
         private void usr_frmItemDetails_Load(object sender, EventArgs e)
         {
 
@@ -190,19 +208,7 @@ namespace ShreeWellnessCenter.usrFrm
             }
         }
 
-        private void datagrid_Items_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                getMyData();
-
-            }
-            catch
-            {
-                datagrid_Items.Refresh();
-            }
-           
-        }
+    
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
         {
@@ -229,7 +235,11 @@ namespace ShreeWellnessCenter.usrFrm
                 }
 
             }
-           
+           else if(e.KeyCode == Keys.Escape)
+
+            {
+                txtProductName.SelectAll();
+            }
 
         }
 
@@ -328,27 +338,27 @@ namespace ShreeWellnessCenter.usrFrm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
-            datdGrid_Items.Refresh();
+            datdGrid_Items1.Refresh();
             string input = txtSearch.Text;
             string uppercasetxt = input.ToUpper();
             string query = "select * from  product where product_name like '" + uppercasetxt + "%'";
             DataSet ds = DB.GetData(query);
-            datdGrid_Items.DataSource = ds.Tables[0];
-            datdGrid_Items.Refresh();
+            datdGrid_Items1.DataSource = ds.Tables[0];
+            datdGrid_Items1.Refresh();
         }
 
         private void datdGrid_Items_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {   try
             {
-                datdGrid_Items.Refresh();
-                txtxSLNO.Text = datdGrid_Items.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtProductNm.Text = datdGrid_Items.Rows[e.RowIndex].Cells[1].Value.ToString();
-                dropQtyVal.Value = int.Parse(datdGrid_Items.Rows[e.RowIndex].Cells[2].Value.ToString());
-                txtSPVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtDPVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[4].Value.ToString();
-                lblAmtVal.Text = datdGrid_Items.Rows[e.RowIndex].Cells[5].Value.ToString();
+                datdGrid_Items1.Refresh();
+                txtxSLNO.Text = datdGrid_Items1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtProductNm.Text = datdGrid_Items1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                dropQtyVal.Value = int.Parse(datdGrid_Items1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                txtSPVal.Text = datdGrid_Items1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDPVal.Text = datdGrid_Items1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                lblAmtVal.Text = datdGrid_Items1.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
-            catch { datdGrid_Items.Refresh(); }
+            catch { datdGrid_Items1.Refresh(); }
           
         }
 
@@ -367,7 +377,7 @@ namespace ShreeWellnessCenter.usrFrm
                     Int64 qty = Int64.Parse(dropQtyVal.Value.ToString());
                     if (txtSPVal.Text != "")
                     {
-                        double nuSP = 0.0;
+                        double  nuSP = 0.0;
                         double sp = 0.0;
                         bool isNumber = double.TryParse(txtSPVal.Text.ToString(), out nuSP);
                         if (isNumber) 
@@ -388,26 +398,26 @@ namespace ShreeWellnessCenter.usrFrm
                                     {
                                         if (txtProductNm.Text != "" && txtSPVal.Text != "" && txtDPVal.Text != "")
                                         {
-                                            string query = "UPDATE product SET product_name ='" + uppercasetxt + "', quantity = " + qty + ", sp = " + sp + ", dp = " + dp + ", amount = " + pr + " WHERE  sl_no = " + slno + "";
+                                            string query = "UPDATE PRODUCT SET QTY = " + qty + ", SP = " + sp + ", DP = " + dp + ", TOTAL = " + pr + " WHERE  PRODUCT_NAME = " + txtPname + "";
 
                                             DB.SetData(query, txtPname + Environment.NewLine + "एक प्रॉडक्ट अपडेट किया गया !...");
-                                            datdGrid_Items.Refresh();
+                                            datdGrid_Items1.Refresh();
                                             getMyData();
                                             ClearP();
                                         }
                                         else
                                         {
-                                            pMsg("अमान्य विवरण !...");
+                                            pMsg("1---अमान्य विवरण !...");
                                             ClearP();
-                                            datdGrid_Items.Refresh();
+                                            datdGrid_Items1.Refresh();
                                         }
                                     }
                                     catch
                                     {
 
-                                        pMsg("अमान्य विवरण !...");
+                                        pMsg("x--अमान्य विवरण !...");
                                         ClearP();
-                                        datdGrid_Items.Refresh();
+                                        datdGrid_Items1.Refresh();
 
                                     }
 
@@ -444,22 +454,22 @@ namespace ShreeWellnessCenter.usrFrm
                 {
                     pMsg("प्रॉडक्ट का नाम लिखें !...");
                     ClearP();
-                    datdGrid_Items.Refresh();
+                    datdGrid_Items1.Refresh();
 
                 }
             }
             catch
             {
-                pMsg("अमान्य विवरण !...");
+                pMsg("2--अमान्य विवरण !...");
                 ClearP();
-                datdGrid_Items.Refresh();
+                datdGrid_Items1.Refresh();
                 getMyData();
             }
         }
         private void btnClearP_Click(object sender, EventArgs e)
         {
             ClearP();
-            datdGrid_Items.Refresh();
+            datdGrid_Items1.Refresh();
             getMyData();
         }
         private void ClearP()
@@ -479,12 +489,13 @@ namespace ShreeWellnessCenter.usrFrm
             {
                 if (txtProductNm.Text != "")
                 {
-                    int slno = int.Parse(txtxSLNO.Text.ToString());
+                    string txtPname = txtProductNm.Text.ToString();
+                    //string uppercasetxt = txtPname.ToUpper();
 
-                    string query = "DELETE FROM PRODUCT WHERE SL_NO = " + slno + "";
+                    string query = "DELETE FROM PRODUCT WHERE PRODUCT_NAME = " + txtPname + "";
 
                     DB.SetData(query, txtProductNm.Text + Environment.NewLine + "एक प्रॉडक्ट डिलीट किया गया !...");
-                    datdGrid_Items.Refresh();
+                    datdGrid_Items1.Refresh();
                     getMyData();
                     ClearP();
                 }
@@ -492,7 +503,7 @@ namespace ShreeWellnessCenter.usrFrm
                 {
                     pMsg("कोई भी प्रॉडक्ट डिलीट नहीं किया गया !");
                     ClearP();
-                    datdGrid_Items.Refresh();
+                    datdGrid_Items1.Refresh();
 
                 }
             }
@@ -500,7 +511,7 @@ namespace ShreeWellnessCenter.usrFrm
             {
                 pMsg("अमान्य विवरण !...");
                 ClearP();
-                datdGrid_Items.Refresh();
+                datdGrid_Items1.Refresh();
 
             }
         }
@@ -513,13 +524,13 @@ namespace ShreeWellnessCenter.usrFrm
             if (result == DialogResult.OK)
             {
                 ClearP();
-                datdGrid_Items.Refresh();
+                datdGrid_Items1.Refresh();
             }
             else
             {
 
                 ClearP();
-                datdGrid_Items.Refresh();
+                datdGrid_Items1.Refresh();
             }
 
         }
@@ -558,7 +569,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            datdGrid_Items.Refresh();            getMyData();
+            datdGrid_Items1.Refresh();            getMyData();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -568,7 +579,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void tabPage2_Leave(object sender, EventArgs e)
         {
-            datdGrid_Items.Refresh(); getMyData();
+            datdGrid_Items1.Refresh(); getMyData();
         }
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
@@ -591,8 +602,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void txtProductNm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
-                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
                 if (txtProductNm.Text != "")
                 {
@@ -607,8 +617,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void dropQtyVal_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9 
-                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
                 if (dropQtyVal.Value >= 0)
                 {
@@ -627,8 +636,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void txtSPVal_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
-                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
                 if (txtSPVal.Text != "")
                 {
@@ -660,8 +668,7 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void txtDPVal_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9
-                || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
             {
                 if (txtDPVal.Text != "")
                 {
@@ -696,10 +703,9 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void btnUpdate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter || e.KeyValue == 13 || e.KeyValue == (char)Keys.Tab || e.KeyValue == 9)
-            {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Down)
+            { 
                 btnUpdate_Click(sender, e);
-
             }
         }
 

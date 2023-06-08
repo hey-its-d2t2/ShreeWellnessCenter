@@ -199,6 +199,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewCust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewCust.Designer.cs">
+      <DependentUpon>ctrlFrmAddNewCust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewProd.Designer.cs">
+      <DependentUpon>ctrlFrmAddNewProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewUsrSal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmAddNewUsrSal.Designer.cs">
+      <DependentUpon>ctrlFrmAddNewUsrSal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDelCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDelCustomer.Designer.cs">
+      <DependentUpon>ctrlFrmDelCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDeleteProductAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDeleteProductAdm.Designer.cs">
+      <DependentUpon>ctrlFrmDeleteProductAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDeleteUsrSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmDeleteUsrSale.Designer.cs">
+      <DependentUpon>ctrlFrmDeleteUsrSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmupdateSalesman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctrlFrm\ctrlFrmupdateSalesman.Designer.cs">
+      <DependentUpon>ctrlFrmupdateSalesman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShreeWCData.cs">
+      <DependentUpon>ShreeWCData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShreeWCData.Designer.cs">
+      <DependentUpon>ShreeWCData.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="db.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -262,6 +312,27 @@
     <Compile Include="usrFrm\usr_frmItemDetails.Designer.cs">
       <DependentUpon>usr_frmItemDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmAddNewCust.resx">
+      <DependentUpon>ctrlFrmAddNewCust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmAddNewProd.resx">
+      <DependentUpon>ctrlFrmAddNewProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmAddNewUsrSal.resx">
+      <DependentUpon>ctrlFrmAddNewUsrSal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmDelCustomer.resx">
+      <DependentUpon>ctrlFrmDelCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmDeleteProductAdm.resx">
+      <DependentUpon>ctrlFrmDeleteProductAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmDeleteUsrSale.resx">
+      <DependentUpon>ctrlFrmDeleteUsrSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFrm\ctrlFrmupdateSalesman.resx">
+      <DependentUpon>ctrlFrmupdateSalesman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +359,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="usrFrm\usr_frmControlAdm.resx">
       <DependentUpon>usr_frmControlAdm.cs</DependentUpon>
@@ -304,6 +376,17 @@
     <EmbeddedResource Include="usrFrm\usr_frmItemDetails.resx">
       <DependentUpon>usr_frmItemDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ShreeWCData.xsc">
+      <DependentUpon>ShreeWCData.xsd</DependentUpon>
+    </None>
+    <None Include="ShreeWCData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShreeWCData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ShreeWCData.xss">
+      <DependentUpon>ShreeWCData.xsd</DependentUpon>
+    </None>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -338,8 +421,69 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\adm_gr %281%29.png" />
+    <None Include="img\adm_wh.png" />
+    <None Include="img\back.png" />
+    <None Include="img\bckgShree.png" />
+    <None Include="img\close.png" />
+    <None Include="img\close_b.png" />
+    <None Include="img\cus_gr.png" />
+    <None Include="img\cus_wh.png" />
+    <None Include="img\diagram.gif" />
+    <None Include="img\help.png" />
+    <None Include="img\hm_gr.png" />
+    <None Include="img\hm_wh.png" />
+    <None Include="img\inv_gr.png" />
+    <None Include="img\inv_wh.png" />
+    <None Include="img\itm_gr.png" />
+    <None Include="img\itm_wh %281%29.png" />
+    <None Include="img\key.png" />
+    <None Include="img\lock.png" />
+    <None Include="img\loff_ge.png" />
+    <None Include="img\loff_wh.png" />
+    <None Include="img\menu_col.png" />
+    <None Include="img\menu_wh.png" />
+    <None Include="img\menu2 %281%29.png" />
+    <None Include="img\minimize.png" />
+    <None Include="img\pur_gr.png" />
+    <None Include="img\pur_wh.png" />
+    <None Include="img\ref %281%29.png" />
+    <None Include="img\ref %281%29_wh.png" />
+    <None Include="img\ref.png" />
+    <None Include="img\ref_wh.png" />
+    <None Include="img\restore.png" />
+    <None Include="img\sale2.png" />
+    <None Include="img\search.png" />
+    <None Include="img\shree_Logo.png" />
+    <None Include="img\shreelogo_half.png" />
+    <None Include="img\shreelogo_half_plain.png" />
+    <None Include="img\sk2.png" />
+    <None Include="img\skey.png" />
+    <None Include="img\usr.png" />
+    <None Include="img\settings.png" />
+    <None Include="img\up.png" />
+    <None Include="img\up %281%29.png" />
+    <None Include="img\acc.png" />
+    <None Include="img\del.png" />
+    <None Include="img\addu.png" />
+    <None Include="img\unchk.png" />
+    <None Include="img\chk.png" />
+    <None Include="img\chh.png" />
+    <None Include="img\mob.png" />
+    <None Include="img\add.png" />
+    <None Include="img\addprod.png" />
+    <None Include="img\prod1.png" />
+    <None Include="img\bnr.png" />
+    <None Include="img\h1.png" />
+    <None Include="img\h2.png" />
+    <None Include="img\email.png" />
+    <None Include="img\gst.png" />
+    <None Include="img\t.png" />
     <Content Include="shreelogo_half .ico" />
     <Content Include="shreelogo_half_plain.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="printing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />

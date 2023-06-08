@@ -26,32 +26,32 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            dataGridCustDet.Refresh();
+            dataGridCustDet.Refresh(); getMyData();
             clearAllFields();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            dataGridUpdate.Refresh();
+            dataGridUpdate.Refresh(); getMyData();
             clearallUp();
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            datagridPrint.Refresh();
+            datagridPrint.Refresh(); getMyData();
         }
         private void tabPage3_Leave(object sender, EventArgs e)
         {
-            datagridPrint.Refresh();
+            datagridPrint.Refresh(); getMyData();
         }
         private void tabPage2_Leave(object sender, EventArgs e)
         {
-            dataGridUpdate.Refresh();
+            dataGridUpdate.Refresh(); getMyData();
             clearallUp();
         }
         private void tabPage1_Leave(object sender, EventArgs e)
         {
-            dataGridCustDet.Refresh();
+            dataGridCustDet.Refresh(); getMyData();
             clearAllFields();
         }
         private void label12_MouseHover(object sender, EventArgs e)
@@ -93,10 +93,11 @@ namespace ShreeWellnessCenter.usrFrm
 
          
 
-            string query = "INSERT INTO customer(user_id, name, id_greening, mobile, address) " +
-               "VALUES ('" + upperCustID + "','" + upperCustName + "','" + upperIDGreen + "', '" + upperMob + "','" + upperAdd + "')";
+            string query = "INSERT INTO CUSTOMER(USER_ID,ID_GREENING, NAME, MOBILE, ADDRESS) " +
+               "VALUES ('" + upperCustID + "','" + upperIDGreen + "', '" + upperCustName + "','" + upperMob + "','" + upperAdd + "')";
 
             DB.SetData(query, txtPname + Environment.NewLine + "एक ग्राहक जोड़ा गया !...");
+            getMyData();
             dataGridCustDet.Refresh();
             clearAllFields();
         }
@@ -209,14 +210,24 @@ namespace ShreeWellnessCenter.usrFrm
 
         private void dataGridCustDet_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridCustDet.Refresh();
+            try
+            {
+
+                //dataGridCustDet.Refresh(); dataGridUpdate.Refresh();
+                txtxUpSLNO.Text = dataGridUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtUpCusName.Text = dataGridUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtUpCusID.Text = dataGridUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
+                comUpIDGreen.SelectedItem = dataGridUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtUpCusMob.Text = dataGridUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtUpCusAddress.Text = dataGridUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+            catch
+            {
+
+            }
         }
 
-        private void dataGridCustDet_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            dataGridCustDet.Refresh();
-        }
-
+     
 
         private void msg(string msg)
         {
@@ -285,7 +296,7 @@ namespace ShreeWellnessCenter.usrFrm
             }
             else if (e.KeyCode == Keys.Up)
             {
-                txtCustID.SelectAll();
+                txtCustID.Select();
             }
         }
 
@@ -380,7 +391,7 @@ namespace ShreeWellnessCenter.usrFrm
             dataGridCustDet.Refresh();
             string input = txtCustName.Text;
             string uppercasetxt = input.ToUpper();
-            string query = "select * from  customer where name like '" + uppercasetxt + "%'";
+            string query = "select * from  CUSTOMER where NAME like '" + uppercasetxt + "%'";
             DataSet ds = DB.GetData(query);
             dataGridCustDet.DataSource = ds.Tables[0];
             dataGridCustDet.Refresh();
@@ -391,9 +402,10 @@ namespace ShreeWellnessCenter.usrFrm
             dataGridCustDet.Refresh();
             string input = txtCustID.Text;
             string uppercasetxt = input.ToUpper();
-            string query = "select * from  customer where user_id like '" + uppercasetxt + "%'";
+            string query = "select * from  CUSTOMER where USER_ID like '" + uppercasetxt + "%'";
             DataSet ds = DB.GetData(query);
             dataGridCustDet.DataSource = ds.Tables[0];
+
             dataGridCustDet.Refresh();
         }
 
@@ -411,33 +423,13 @@ namespace ShreeWellnessCenter.usrFrm
             dataGridUpdate.Refresh();
             string input = txtSearch.Text;
             string uppercasetxt = input.ToUpper();
-            string query = "select * from  customer where user_id like '" + uppercasetxt + "%'";
+            string query = "select * from  CUSTOMER where USER_ID like '" + uppercasetxt + "%'";
             DataSet ds = DB.GetData(query);
             dataGridUpdate.DataSource = ds.Tables[0];
             dataGridUpdate.Refresh();
 
         }
 
-
-        private void dataGridUpdate_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                dataGridUpdate.Refresh();
-                txtxUpSLNO.Text = dataGridUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtUpCusName.Text = dataGridUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtUpCusID.Text = dataGridUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
-                comUpIDGreen.SelectedItem = dataGridUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtUpCusMob.Text = dataGridUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtUpCusAddress.Text = dataGridUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            }
-            catch
-            {
-                dataGridUpdate.Refresh();
-            }
-
-        }
         private void clearallUp()
         {
             txtSearch.Text = "";
@@ -470,10 +462,11 @@ namespace ShreeWellnessCenter.usrFrm
 
             string add = txtUpCusAddress.Text.ToString();
             string upperUpAdd = add.ToUpper();
-            Int64 slno = Int64.Parse(txtxUpSLNO.Text.ToString());
-            string query = "UPDATE customer SET user_id ='" + upperUpCustID + "',name = '" + upperUpCustName + "',id_greening = '" + upperUpIDGreen + "',mobile = '" + upperUpMob + "',address = '" + upperUpAdd + "' where sl_no = " + slno + "";
+           // Int64 slno = Int64.Parse(txtxUpSLNO.Text.ToString());
+            string query = "UPDATE CUSTOMER SET NAME = '" + upperUpCustName + "',ID_GREENING = '" + upperUpIDGreen + "',MOBILE = '" + upperUpMob + "',ADDRESS = '" + upperUpAdd + "' where USER_ID = " + upperUpCustID + "";
             DB.SetData(query, txtCname + Environment.NewLine + "ग्राहक का विवरण Update किया गया !...");
             dataGridUpdate.Refresh();
+            getMyData();
             clearallUp();
 
         }
@@ -492,6 +485,7 @@ namespace ShreeWellnessCenter.usrFrm
                                 if (txtUpCusAddress.Text != "")
                                 {
                                     myQueryupdate();
+                                    getMyData();
                                 }
                                 else
                                 {
@@ -502,6 +496,7 @@ namespace ShreeWellnessCenter.usrFrm
                                     if (result1 == DialogResult.OK)
                                     {
                                         myQueryupdate();
+                                        getMyData();
                                     }
                                     else
                                     {
@@ -521,13 +516,15 @@ namespace ShreeWellnessCenter.usrFrm
                                     {
                                         //inside mobile is blank if
                                         myQueryupdate();
-                                   
+                                        getMyData();
+
                                     }
                                    else
                                     {
                                         //inside mobile is blank else
                                         //txtUpCusAddress.SelectAll();
                                         myQueryupdate();
+                                        getMyData();
                                     }
 
                                 }
@@ -577,11 +574,11 @@ namespace ShreeWellnessCenter.usrFrm
             {
                 if (txtxUpSLNO.Text != "")
                 {
-                    int slno = int.Parse(txtxUpSLNO.Text.ToString());
-
-                    string query = "DELETE FROM CUSTOMER WHERE SL_NO = " + slno + "";
+                    string cid = txtUpCusID.Text.ToString();
+                    string query = "DELETE FROM CUSTOMER WHERE USER_ID = " + cid + "";
 
                     DB.SetData(query, txtUpCusName.Text + Environment.NewLine + "एक ग्राहक डिलीट किया गया !...");
+                    getMyData();
                     dataGridUpdate.Refresh();
                     this.Refresh();
                     clearallUp();
@@ -632,11 +629,11 @@ namespace ShreeWellnessCenter.usrFrm
                 else
                 {
                     msg("ID लिखें !...");
-                    txtUpCusID.SelectAll();
+                  //  txtUpCusID.SelectAll();
                 }
             }
-            else if (e.KeyCode == Keys.Escape) { txtUpCusID.SelectAll(); }
-            else if (e.KeyCode == Keys.Up) { txtUpCusID.SelectAll(); }
+            else if (e.KeyCode == Keys.Escape) {/* txtUpCusID.SelectAll(); */}
+            else if (e.KeyCode == Keys.Up) { /*txtUpCusID.SelectAll();*/ }
 
         }
 
@@ -653,7 +650,7 @@ namespace ShreeWellnessCenter.usrFrm
                 }
             }
             else if (e.KeyCode == Keys.Escape) { comUpIDGreen.SelectedValue = 0; }
-            else if (e.KeyCode == Keys.Up) { txtUpCusID.SelectAll(); }
+            else if (e.KeyCode == Keys.Up) { /*txtUpCusID.SelectAll(); */}
 
         }
 
@@ -725,25 +722,6 @@ namespace ShreeWellnessCenter.usrFrm
             clearallUp();
         }
 
-        private void dataGridUpdate_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            dataGridUpdate.Refresh();
-        }
-
-        private void dataGridCustDet_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridCustDet.Refresh();
-        }
-
-        private void dataGridUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridUpdate.Refresh();
-        }
-
-        private void datagridPrint_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            datagridPrint.Refresh();
-        }
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
         {
@@ -755,12 +733,41 @@ namespace ShreeWellnessCenter.usrFrm
         }
         private void getMyData()
         {
-            string query = "select * from customer";
+            string query = "select * from CUSTOMER";
             DataSet dataSet = DB.GetData(query);
             if (dataSet.Tables[0].Rows.Count > 0)
             {
                 dataGridCustDet.DataSource = dataGridUpdate.DataSource = datagridPrint.DataSource = dataSet.Tables[0];
             }
+            if (dataGridCustDet.Rows.Count > 1)
+            {
+                for (int i = 0; i < dataGridCustDet.Rows.Count; i++)
+                {
+                    dataGridCustDet.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+            if (dataGridUpdate.Rows.Count > 1)
+            {
+                for (int i = 0; i < dataGridUpdate.Rows.Count; i++)
+                {
+                    dataGridUpdate.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+            if (datagridPrint.Rows.Count > 1)
+            {
+                for (int i = 0; i < datagridPrint.Rows.Count; i++)
+                {
+                    datagridPrint.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+            }
+
+            //string query1 = "select * from id_greeening";
+            //dataSet = DB.GetData(query1);
+
+            //if (dataSet.Tables[0].Rows.Count>0)
+            //{
+            //    dropIDGreen.DataSource = dataSet.Tables[0];
+            //}
             dataGridCustDet.Refresh();
             datagridPrint.Refresh();
             dataGridUpdate.Refresh();
@@ -797,14 +804,27 @@ namespace ShreeWellnessCenter.usrFrm
             getMyData();
         }
 
-        private void dataSet2BindingSource_CurrentChanged(object sender, EventArgs e)
-        {
+        //private void dataSet2BindingSource_CurrentChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void cUSTOMERBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
+        //private void cUSTOMERBindingSource_CurrentChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
+
+        //private void fillByToolStripButton_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        ///this.iD_GREENINGTableAdapter.FillBy(this.dataSet1.ID_GREENING);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //    }
+
+        //}
     }
 }

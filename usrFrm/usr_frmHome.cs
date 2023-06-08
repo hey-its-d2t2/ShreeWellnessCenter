@@ -47,7 +47,30 @@ namespace ShreeWellnessCenter.usrFrm
                 datagrid_Items.DataSource = dataSet.Tables[0];
             }
             txtProductName.Text = "";
+            //---------Banner Data ---------
+            setNewBannerData();
 
+        }
+        private void setNewBannerData()
+        {
+            db DB = new db();
+            //Getting Daya
+            string query = "select * from banner";
+            //DB.SetData(query);
+            DataSet dataSet = DB.GetData(query);
+            if (dataSet.Tables[0].Rows.Count >= 0)
+            {
+                dataGridBanner.DataSource = dataSet.Tables[0];
+
+                lblH1.Text = dataGridBanner.Rows[0].Cells[0].Value.ToString();
+                lblh2.Text = dataGridBanner.Rows[0].Cells[1].Value.ToString();
+                lblTitle.Text = dataGridBanner.Rows[0].Cells[2].Value.ToString();
+                lblAddress.Text = dataGridBanner.Rows[0].Cells[3].Value.ToString();
+                lblMob1.Text = dataGridBanner.Rows[0].Cells[4].Value.ToString();
+                lblMob2.Text = dataGridBanner.Rows[0].Cells[5].Value.ToString();
+                lblEmail.Text = dataGridBanner.Rows[0].Cells[6].Value.ToString();
+                lblGST.Text = dataGridBanner.Rows[0].Cells[7].Value.ToString();
+            }
 
         }
 
@@ -59,7 +82,7 @@ namespace ShreeWellnessCenter.usrFrm
             { datagrid_Items.Visible = false; }
             else
             { datagrid_Items.Visible = false; }
-
+            setNewBannerData();
         }
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
