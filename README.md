@@ -17,7 +17,8 @@ Screenshots:
 ![Screenshot 2023-06-03 233649](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/dcd12c35-33b8-4bab-8a1e-172e15ac58ca)
 ![Screenshot 2023-06-03 233738](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/b266fe6f-c822-4703-847d-f71d9283e6fc)
 ![Screenshot 2023-06-03 233759](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/d327fbc5-3a39-4492-9311-c1c26ea38fbd)
-![Screenshot 2023-06-03 233825](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/a8957b37-3e38-42cb-8203-4852284a2a4d)
+![Screenshot 2023-06-03 233825](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/6047dfbc-1e10-4631-829f-7e4c32a0f99d)
+
 ![Screenshot 2023-06-03 233946](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/9b4d908a-30b0-4f9d-a0fe-5dfabfdb42bc)
 ![Screenshot 2023-06-03 234013](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/743331da-ffe7-4252-bf42-134380df1237)
 ![Screenshot 2023-06-03 234142](https://github.com/hey-its-d2t2/ShreeWellnessCenter/assets/63626210/3f372554-d2b9-47dc-85f5-6d125b147d7b)
